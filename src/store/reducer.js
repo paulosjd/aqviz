@@ -1,7 +1,9 @@
 import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE } from './constants'
 
 const initialState = {
-    aqSites: [],
+    sites: [],
+    regions: [],
+    environs: [],
     loading: false,
     error: null,
 };
@@ -11,16 +13,19 @@ export default function sitesReducer(state = initialState, action) {
         case FETCH_SITES_BEGIN:
             return { ...state, loading: true, error: null };
         case FETCH_SITES_SUCCESS:
-            const profileData = action.payload.profileData.data;
+            const sitesData = action.payload.sitesData.data;
+            console.log(sitesData)
             return {
                 ...state,
                 loading: false,
                 loadError: false,
-                aqSites: []
+                regions: [...new Set(sitesData.map(a => a.region))],
+                environs: [...new Set(sitesData.map(a => a.environ))],
+                sites: sitesData
             };
         case FETCH_SITES_FAILURE:
+            console.log(action.payload.error)
             return { ...state, loading: false, error: action.payload.error };
-
         default:
             return state
     }

@@ -1,0 +1,36 @@
+
+     title="Northern Ireland"
+     id="GB-UKN" />
+
+     title="Scotland"
+     id="GB-UKM" />
+
+     title="Wales"
+     id="GB-UKL" />
+
+     title="South West"
+     id="GB-UKK" />
+
+     title="South East"
+     id="GB-UKJ" />
+
+     title="Greater London"
+     id="GB-UKI" />
+
+     title="East of England"
+     id="GB-UKH" />
+
+     title="West Midlands"
+     id="GB-UKG" />
+
+     title="East Midlands"
+     id="GB-UKF" />
+
+     title="Yorkshire and the Humber"
+     id="GB-UKE" />
+
+     title="North West"
+     id="GB-UKD" />
+
+     title="North East"
+     id="GB-UKC" />

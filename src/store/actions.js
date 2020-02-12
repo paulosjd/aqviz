@@ -2,12 +2,13 @@ import axios from "axios";
 import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE } from './constants'
 
 export const fetchSites = () => {
-    let url = 'http://127.0.0.1:6543/sites/';
+    let url = 'http://127.0.0.1:6543/sites';
     return dispatch => {
-        axios.get(url, {headers: {"Authorization": "Bearer " + localStorage.getItem('id_token')}})
-            .then(profileData => {
-                dispatch({ type: FETCH_SITES_SUCCESS, payload: {profileData} });
+        dispatch({ type: FETCH_SITES_BEGIN});
+        axios.get(url)
+            .then(sitesData => {
+                dispatch({ type: FETCH_SITES_SUCCESS, payload: { sitesData } });
             })
-            .catch((error) => dispatch({ type: FETCH_SITES_FAILURE, payload: {error} }))
+            .catch((error) => dispatch({ type: FETCH_SITES_FAILURE, payload: { error } }))
     }
 };

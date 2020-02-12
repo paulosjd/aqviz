@@ -16,6 +16,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.sum-spin {
+  margin-left: 20px;
+  margin-top: 16px;
+}
+
+.page-title {
+  margin-left: 16px;
+  margin-top: 8px;
+  cursor: default;
+  font-size: 22px;
+}
+
 .table {
   width: 260px;
   margin-left: 20px;
@@ -29,4 +42,35 @@ code {
 path:hover {
   opacity: 0.5;
   fill: blue;
+}
+
+.list-group-item {
+  border-color: white;
+  padding-left: .25rem;
+}
+
+.menu-items-list {
+  margin-top: 16px;
+}
+
+.btn_line_btn {
+  font-size: 12px;
+  padding: 4px 10px 4px 10px;
+  margin: 1px;
+  border-color: #f5f5f3;
+  border-radius: 3px;
+}
+
+.btn_line{
+  margin-left: 22px;
+  display: inline-block;
+}
+
+.foobar{
+  fill:blue;
+  background-color: blue;
+}
+
+.form-radio, .time_label {
+  color: dimgrey;
 }
