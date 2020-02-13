@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE } from './constants'
+import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, TEXT_SEARCH_CHANGE } from './constants'
 
 export const fetchSites = () => {
     let url = 'http://127.0.0.1:6543/sites';
@@ -11,4 +11,8 @@ export const fetchSites = () => {
             })
             .catch((error) => dispatch({ type: FETCH_SITES_FAILURE, payload: { error } }))
     }
+};
+
+export const setTextInput = (val) => {
+    return { type: TEXT_SEARCH_CHANGE, value: val}
 };

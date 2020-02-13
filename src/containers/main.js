@@ -15,7 +15,6 @@ class MainContainer extends Component {
 
     render() {
         console.log(this.props.sites)
-        console.log(this.props.regions)
         return (
             <Row>
                 <Col md={6}>
@@ -25,7 +24,7 @@ class MainContainer extends Component {
                                 regions={this.props.regions}
                                 environs={this.props.environs}
                             /> }
-                        { this.props.sites.length > 0 ? <SiteTable sites={this.props.sites}/> : null }
+                        <SiteTable />
                 </Col>
                 <Col md={6}>
                     <div className='overview-map'>

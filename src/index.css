@@ -55,6 +55,10 @@ path:hover {
   margin-top: 16px;
 }
 
+.active-btn  {
+  background-color: #d2cdc3;
+}
+
 .btn_line_btn {
   font-size: 12px;
   padding: 4px 10px 4px 10px;
@@ -83,6 +87,10 @@ path:hover {
 
 .time{
   float: right
+}
+
+.text_filter {
+  float: left
 }
 
 .pollutant_select {

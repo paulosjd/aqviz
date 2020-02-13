@@ -1,4 +1,4 @@
-import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK
+import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK, TEXT_SEARCH_CHANGE,
 } from './constants'
 
 const initialState = {
@@ -7,6 +7,7 @@ const initialState = {
     selectedRegions: [],
     environs: [],
     selectedEnvirons: [],
+    textSearch: '',
     loading: false,
     error: null,
 };
@@ -36,7 +37,7 @@ export default function sitesReducer(state = initialState, action) {
             } else {
                 environList.push(action.value)
             }
-            return { ...state, selectedEnvirons: environList};
+            return { ...state, selectedEnvirons: environList };
         case REGION_CLICK:
             let regionList = [...state.selectedRegions];
             if (regionList.includes(action.value)){
@@ -44,7 +45,10 @@ export default function sitesReducer(state = initialState, action) {
             } else {
                 regionList.push(action.value)
             }
-            return { ...state, selectedRegions: regionList};
+            return { ...state, selectedRegions: regionList };
+        case TEXT_SEARCH_CHANGE:
+            console.log(action.value)
+            return { ...state, textSearch: action.value };
         default:
             return state
     }
