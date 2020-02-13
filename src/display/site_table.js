@@ -38,12 +38,12 @@ const SiteTable = (props) => {
     }
 
     return (
-        <Table striped bordered condensed hover>
+        <Table striped bordered hover>
             <thead>
             <tr>
-                <th className='time_label'> <br/>
+                <th className='th-main'> <br/>
                     {/*{props.time}*/}
-                    12/02/2020 07:00
+                    <span className='time'>12/02/2020 07:00</span>
                 </th>
                 <th id="pm10_header">
                     <PollutantSelect

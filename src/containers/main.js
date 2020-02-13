@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { ReactSVG } from 'react-svg'
 import { Row, Col, Spinner, ListGroup, ListGroupItem } from 'reactstrap';
 import { fetchSites } from '../store/actions';
-import ButtonLine from '../form/button_line';
 import SiteTable from '../display/site_table';
+import FilterItems from './filter_items';
 
 
 class MainContainer extends Component {
@@ -16,25 +16,15 @@ class MainContainer extends Component {
     render() {
         console.log(this.props.sites)
         console.log(this.props.regions)
-        let listItems;
-        if (this.props.regions.length > 0 && this.props.environs.length > 0) {
-            listItems = (
-                <ListGroup className='menu-items-list'>
-                    <ListGroupItem>
-                        <ButtonLine labels={this.props.regions} category={'region'}/>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        <ButtonLine labels={this.props.environs} category={'environ'}/>
-                    </ListGroupItem>
-                </ListGroup>
-            )
-        }
-
         return (
             <Row>
                 <Col md={6}>
-                    <span className='page-title'>UK Air Quality Data</span>
-                        { this.props.isLoading ? <Spinner color="secondary sum-spin"/> : listItems }
+                    <div className='page-title'>UK Air Quality Data</div>
+                        { this.props.isLoading ? <Spinner color="secondary sum-spin"/> :
+                            <FilterItems
+                                regions={this.props.regions}
+                                environs={this.props.environs}
+                            /> }
                         { this.props.sites.length > 0 ? <SiteTable sites={this.props.sites}/> : null }
                 </Col>
                 <Col md={6}>

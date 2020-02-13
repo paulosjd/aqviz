@@ -1,18 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { POLLUTANT_SELECT } from "../store/constants";
 
-export default (props) => {
-    const width = props.pollutant === 'no2' ? 60 : 70;
+export default () => {
+    const [ dropdownOpen, setDropdownOpen] = useState(false);
+    const dispatch = useDispatch();
+    const content = useSelector(state => state);
+    const pollutant = content.aqData.pollutant;
+
     return (
-        <select
-            style={{'width': width}}
-            className='pollutant_select'
-            onChange={(e) => props.handlePollutantChoice(e.target.value)}
-            value={props.pollutant}
+        <ButtonDropdown
+            isOpen={dropdownOpen}
+            toggle={() => setDropdownOpen(!dropdownOpen)}
         >
-            <option value='pm10' title="Particulate matter 10">PM10</option>
-            <option value='pm25' title="Particulate matter 25">PM25</option>
-            <option value='no2' title="Nitrogen dioxide">NO₂</option>
-            <option value='ozone' title="Ozone">ozone</option>
-        </select>
+            <DropdownToggle className='pollutant_select' caret>
+                {pollutant === 'ozone' ? 'Ozone' : pollutant.toUpperCase()}</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem
+                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
+                >
+                    PM10
+                </DropdownItem>
+                <DropdownItem
+                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
+                >
+                    PM25
+                </DropdownItem>
+                <DropdownItem
+                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
+                >
+                    NO₂
+                </DropdownItem>
+                <DropdownItem
+                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
+                >
+                    Ozone
+                </DropdownItem>
+            </DropdownMenu>
+        </ButtonDropdown>
     )
 }
