@@ -18,7 +18,7 @@ export default function sitesReducer(state = initialState, action) {
             return { ...state, loading: true, error: null };
         case FETCH_SITES_SUCCESS:
             const sitesData = action.payload.sitesData.data;
-            console.log(sitesData)
+            console.log(sitesData);
             return {
                 ...state,
                 loading: false,
@@ -28,7 +28,7 @@ export default function sitesReducer(state = initialState, action) {
                 sites: sitesData
             };
         case FETCH_SITES_FAILURE:
-            console.log(action.payload.error)
+            console.log(action.payload.error);
             return { ...state, loading: false, error: action.payload.error };
         case ENVIRON_CLICK:
             let environList = [...state.selectedEnvirons];

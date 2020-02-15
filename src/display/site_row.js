@@ -14,7 +14,7 @@ const SiteRow = ({site, pollutant}) => {
             <td>
                 <span>{site.name}</span>
             </td>
-            <td className='pm10_data'>
+            <td className='value_cell'>
                 {/*{props.site[props.pollutant]}*/}
                 8
             </td>

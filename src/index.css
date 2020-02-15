@@ -30,10 +30,11 @@ code {
 }
 
 .table {
-  width: 460px;
+  width: 500px;
   margin: 22px;
   line-height: 1.0;
   text-align: center;
+  font-size: 13px;
 }
 
 .overview-map {
@@ -43,8 +44,10 @@ code {
 
 path:hover {
   opacity: 0.5;
-  fill: blue;
+  fill: #ffd781;
 }
+
+
 
 .list-group-item {
   border-color: white;
@@ -75,22 +78,22 @@ path:hover {
   display: inline-block;
 }
 
-.foobar{
-  fill:blue;
-  background-color: blue;
-}
-
 .form-radio, .th-main {
   color: dimgrey;
   font-weight: normal;
+  padding: .5rem
 }
 
 .time{
-  float: right
+  float: right;
+  font-size: 13px;
 }
 
 .text_filter {
-  float: left
+  float: left;
+  padding: 6px;
+  width: 180px;
+  font-size: 12px;
 }
 
 .pollutant_select {
@@ -98,4 +101,16 @@ path:hover {
   border-color: #8a9baa;
   padding: 5px;
   width: 76px;
+}
+
+.pollutant_select {
+  background-color: #8a9baa;
+  border-color: #8a9baa;
+  padding: 4px;
+  width: 70px;
+  display: initial !important;
+}
+
+.value_cell {
+  width: 28%;
 }

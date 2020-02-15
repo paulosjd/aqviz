@@ -8,47 +8,47 @@ import { setTextInput } from "../store/actions"
 
 class SiteTable extends Component {
 
-    // const getSites = () =>{
-    //     let sites = [...props.sites];
-    //     const filterText = props.filterText;
-    //     if (props.highFilter) {
-    //         sites.sort((a, b) => a[props.pollutant] - b[props.pollutant]);
-    //         if ( props.highFilter === 'low' ) {
-    //             sites = sites.slice(0,10)
-    //         } else {sites = sites.slice(-10).reverse()}
-    //     }
-    //     return sites.filter((site) => {
-    //         return (
-    //             site.name.toLowerCase().indexOf(filterText.toLowerCase()) > -1 &&
-    //             (!props.siteRegion || site.region === props.siteRegion) &&
-    //             (!props.siteCategory || site.category === props.siteCategory))
-    //     });
-    // };
-    render() {
+    getFilteredSites = () =>{
+        const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
+        let sites = [...this.props.sites];
+        if (this.props.highFilter) {
+            sites.sort((a, b) => a[this.props.pollutant] - b[this.props.pollutant]);
+            if (this.props.highFilter === 'low') {
+                sites = sites.slice(0,10)
+            } else {sites = sites.slice(-10).reverse()}
+        }
+        return sites.filter((site) => {
+            return (
+                site.name.toLowerCase().indexOf(this.props.textSearch.toLowerCase()) > -1 &&
+                (envEmpty || this.props.selectedEnvirons.includes(site.environ)) &&
+                (regEmpty || this.props.selectedRegions.includes(site.region)))
+        });
+    };
 
+    render() {
         let rows = [];
-        for (let site of this.props.sites) {
-            rows.push(
-                <SiteRow
-                    pollutant={this.props.pollutant}
-                    // onSiteClick={props.onSiteClick}
-                    site={site} key={site.id}
-                />
-            );
+        if (this.props.sites.length < 1 || (
+            [ ...this.props.selectedRegions, ...this.props.selectedEnvirons].length < 1
+            && this.props.textSearch.length < 1)
+        ) {
+            rows = <tr><td > </td><td className='value_cell'> </td></tr>
+        } else {
+            const filteredSites = this.getFilteredSites();
+            for (let site of filteredSites) {
+                rows.push(
+                    <SiteRow
+                        pollutant={this.props.pollutant}
+                        // onSiteClick={props.onSiteClick}
+                        site={site} key={site.id}
+                    />
+                );
+            }
         }
-        if (rows.length < 1) {
-            // rows = !props.filterText ? <tr><td className='loading_text'>Loading...</td></tr> :
-            rows = <tr><td>No results found</td></tr>
-        } else if (this.props.selectedRegions.concat(this.props.selectedEnvirons).length < 1) {
-            rows = <tr><td>Search or something</td></tr>
-        }
-        console.log('this.props.sites.textSearch')
-        console.log(this.props.textSearch)
         return (
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th className='th-main'><br/>
+                    <th className='th-main'>
                         <TextSearchInput
                             textInput={this.props.textSearch}
                             handleTextChange={this.props.setTextInput}
@@ -65,7 +65,7 @@ class SiteTable extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                {rows}
+                    {rows}
                 </tbody>
             </Table>
         );
