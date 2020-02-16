@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ReactSVG } from 'react-svg'
-import { Row, Col, Spinner, ListGroup, ListGroupItem } from 'reactstrap';
+import { Row, Col, Spinner } from 'reactstrap';
 import { fetchSites, regionClick } from '../store/actions';
 import SiteTable from '../display/site_table';
+import RegionsMap from '../display/regions_map'
 import FilterItems from './filter_items';
-import {ENVIRON_CLICK, REGION_CLICK} from "../store/constants";
-
 
 class MainContainer extends Component {
 
@@ -14,7 +12,28 @@ class MainContainer extends Component {
         this.props.fetchSites();
     }
 
+    getFilteredSites = () =>{
+        let sites = [...this.props.sites];
+        const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
+        if (envEmpty && regEmpty && this.props.textSearch.length < 1){
+            return []
+        }
+        if (this.props.highFilter) {
+            sites.sort((a, b) => a[this.props.pollutant] - b[this.props.pollutant]);
+            if (this.props.highFilter === 'low') {
+                sites = sites.slice(0,10)
+            } else {sites = sites.slice(-10).reverse()}
+        }
+        return sites.filter((site) => {
+            return (
+                site.name.toLowerCase().indexOf(this.props.textSearch.toLowerCase()) > -1 &&
+                (envEmpty || this.props.selectedEnvirons.includes(site.environ)) &&
+                (regEmpty || this.props.selectedRegions.includes(site.region)))
+        });
+    };
+
     render() {
+        const filteredSites = this.getFilteredSites()
         console.log(this.props.sites)
         return (
             <Row>
@@ -25,45 +44,15 @@ class MainContainer extends Component {
                                 regions={this.props.regions}
                                 environs={this.props.environs}
                             /> }
-                        <SiteTable />
+                        <SiteTable filteredSites={filteredSites}/>
                 </Col>
                 <Col md={6}>
                     <div className='overview-map'>
-                        <ReactSVG src="uk2.svg"
-                                  onClick={(e) => {
-                                      const title = e.target.attributes.title;
-                                      if (title && this.props.regions.includes(title.value)) {
-                                          this.props.regionClick(title.value)
-                                      }
-                                  }}
-                                  beforeInjection={svg => {
-                                      // console.dir(svg)
-                                      // for (let child of svg.children){
-                                      //     const title = child.attributes.title;
-                                      //     if (title && this.props.regions.includes(title.value)) {
-                                      //         console.log(title)
-                                      //     }
-                                      // }
-
-                                        // is object like 5: <path id="GB-UKL-24" d="m 2 ...
-                                        // can dig out selected one and setAttribute (e.g. color) on it?
-                                      svg.setAttribute("transform", "scale(0.5) translate(-225 -515.5)");
-                                  }}
-
-                                  // TODO - some kind of listener for changes to selectedRegions - svg.Set or Removeattributes accordingly
-
-                                  afterInjection={(err, svg) => {
-                                      console.log(svg)
-                                      for (let child of svg.children){
-                                          const title = child.attributes.title;
-                                          if (title && this.props.selectedRegions.includes(title.value)) {
-                                              console.log(title)
-                                              child.setAttribute('style', 'fill: #ffd781')
-                                              // svg.classList.add('svg-class-name')
-                                              // svg.setAttribute('style', 'width: 200px')
-                                          }
-                                      }
-                                  }}
+                        <RegionsMap
+                            regions={this.props.regions}
+                            selectedRegions={this.props.selectedRegions}
+                            regionClick={this.props.regionClick}
+                            filteredSites={filteredSites}
                         />
                     </div>
                 </Col>
@@ -78,6 +67,8 @@ const mapStateToProps = ({ sites }) => {
         sites: sites.sites,
         regions: sites.regions,
         selectedRegions: sites.selectedRegions,
+        selectedEnvirons: sites.selectedEnvirons,
+        textSearch: sites.textSearch,
         environs: sites.environs,
         error: sites.error,
         isLoading: sites.loading,

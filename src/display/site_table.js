@@ -8,32 +8,29 @@ import { setTextInput } from "../store/actions"
 
 class SiteTable extends Component {
 
-    getFilteredSites = () =>{
-        const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
-        let sites = [...this.props.sites];
-        if (this.props.highFilter) {
-            sites.sort((a, b) => a[this.props.pollutant] - b[this.props.pollutant]);
-            if (this.props.highFilter === 'low') {
-                sites = sites.slice(0,10)
-            } else {sites = sites.slice(-10).reverse()}
-        }
-        return sites.filter((site) => {
-            return (
-                site.name.toLowerCase().indexOf(this.props.textSearch.toLowerCase()) > -1 &&
-                (envEmpty || this.props.selectedEnvirons.includes(site.environ)) &&
-                (regEmpty || this.props.selectedRegions.includes(site.region)))
-        });
-    };
+    // getFilteredSites = () =>{
+    //     const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
+    //     let sites = [...this.props.sites];
+    //     if (this.props.highFilter) {
+    //         sites.sort((a, b) => a[this.props.pollutant] - b[this.props.pollutant]);
+    //         if (this.props.highFilter === 'low') {
+    //             sites = sites.slice(0,10)
+    //         } else {sites = sites.slice(-10).reverse()}
+    //     }
+    //     return sites.filter((site) => {
+    //         return (
+    //             site.name.toLowerCase().indexOf(this.props.textSearch.toLowerCase()) > -1 &&
+    //             (envEmpty || this.props.selectedEnvirons.includes(site.environ)) &&
+    //             (regEmpty || this.props.selectedRegions.includes(site.region)))
+    //     });
+    // };
 
     render() {
         let rows = [];
-        if (this.props.sites.length < 1 || (
-            [ ...this.props.selectedRegions, ...this.props.selectedEnvirons].length < 1
-            && this.props.textSearch.length < 1)
-        ) {
+        const filteredSites = this.props.filteredSites;
+        if (filteredSites.length < 1) {
             rows = <tr><td > </td><td className='value_cell'> </td></tr>
         } else {
-            const filteredSites = this.getFilteredSites();
             for (let site of filteredSites) {
                 rows.push(
                     <SiteRow

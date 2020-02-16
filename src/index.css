@@ -16,6 +16,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.svg {
+  position: relative;
+}
+.foobar {
+  position: absolute;
+}
 
 .sum-spin {
   margin-left: 20px;
@@ -109,6 +115,7 @@ path:hover {
   padding: 4px;
   width: 70px;
   display: initial !important;
+  font-size: 14px;
 }
 
 .value_cell {
