@@ -23,6 +23,6 @@ export const setTextInput = (val) => {
     return { type: TEXT_SEARCH_CHANGE, value: val}
 };
 
-export const regionClick = (val) => {
-    return { type: REGION_CLICK, value: val}
+export const regionClick = (val, only_add) => {
+    return { type: REGION_CLICK, value: val, only_add: only_add}
 };

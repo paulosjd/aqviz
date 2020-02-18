@@ -16,11 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.svg {
-  position: relative;
-}
-.foobar {
-  position: absolute;
+.site-mark{
+  display: none;
 }
 
 .sum-spin {
@@ -45,15 +42,14 @@ code {
 
 .overview-map {
   height: 500px;
-  overflow: hidden
+  overflow: hidden;
+  margin-top: 26px;
 }
 
 path:hover {
   opacity: 0.5;
-  fill: #ffd781;
+  fill: #ffe090;
 }
-
-
 
 .list-group-item {
   border-color: white;
@@ -110,6 +106,7 @@ path:hover {
 }
 
 .pollutant_select {
+  float: initial !important;
   background-color: #8a9baa;
   border-color: #8a9baa;
   padding: 4px;
@@ -120,4 +117,12 @@ path:hover {
 
 .value_cell {
   width: 28%;
+}
+
+text.site-label {
+  display: none;
+  fill: black;
+  font-size: 24px;
+  position: absolute;
+  cursor: default;
 }

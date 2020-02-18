@@ -37,16 +37,8 @@ class MainContainer extends Component {
         console.log(this.props.sites)
         return (
             <Row>
-                <Col md={6}>
-                    <div className='page-title'>UK Air Quality Data</div>
-                        { this.props.isLoading ? <Spinner color="secondary sum-spin"/> :
-                            <FilterItems
-                                regions={this.props.regions}
-                                environs={this.props.environs}
-                            /> }
-                        <SiteTable filteredSites={filteredSites}/>
-                </Col>
-                <Col md={6}>
+
+                <Col md={4}>
                     <div className='overview-map'>
                         <RegionsMap
                             regions={this.props.regions}
@@ -55,6 +47,15 @@ class MainContainer extends Component {
                             filteredSites={filteredSites}
                         />
                     </div>
+                </Col>
+                <Col md={8}>
+                    <div className='page-title'>UK Air Quality Data</div>
+                    { this.props.isLoading ? <Spinner color="secondary sum-spin"/> :
+                        <FilterItems
+                            regions={this.props.regions}
+                            environs={this.props.environs}
+                        /> }
+                    <SiteTable filteredSites={filteredSites}/>
                 </Col>
             </Row>
         );
@@ -78,7 +79,7 @@ const mapStateToProps = ({ sites }) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchSites: () => dispatch(fetchSites()),
-        regionClick: (val) => dispatch(regionClick(val))
+        regionClick: (val, arg) => dispatch(regionClick(val, arg))
     };
 };
 

@@ -8,15 +8,15 @@ const SiteRow = ({site, pollutant}) => {
     //     const siteName = e.currentTarget.dataset.sitename;
     //     props.onSiteClick(siteCode, siteName);
     //     window.scrollTo(0, 0);
-    // };
+    // }
+
     return (
         <tr>
             <td>
                 <span>{site.name}</span>
             </td>
             <td className='value_cell'>
-                {/*{props.site[props.pollutant]}*/}
-                8
+                {site[pollutant]}
             </td>
         </tr>
     );

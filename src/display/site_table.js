@@ -69,12 +69,13 @@ class SiteTable extends Component {
     };
 }
 
-const mapStateToProps = ({ sites }) => {
+const mapStateToProps = ({ sites, aqData }) => {
 
     return {
         sites: sites.sites,
         regions: sites.regions,
         environs: sites.environs,
+        pollutant: aqData.pollutant,
         error: sites.error,
         isLoading: sites.loading,
         textSearch: sites.textSearch,
