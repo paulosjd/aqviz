@@ -47,7 +47,6 @@ export default function sitesReducer(state = initialState, action) {
             }
             return { ...state, selectedRegions: regionList };
         case TEXT_SEARCH_CHANGE:
-            console.log(action.value)
             return { ...state, textSearch: action.value };
         default:
             return state

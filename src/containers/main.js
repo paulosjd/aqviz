@@ -33,11 +33,10 @@ class MainContainer extends Component {
     };
 
     render() {
-        const filteredSites = this.getFilteredSites()
+        const filteredSites = this.getFilteredSites();
         console.log(this.props.sites)
         return (
             <Row>
-
                 <Col md={4}>
                     <div className='overview-map'>
                         <RegionsMap
@@ -45,6 +44,7 @@ class MainContainer extends Component {
                             selectedRegions={this.props.selectedRegions}
                             regionClick={this.props.regionClick}
                             filteredSites={filteredSites}
+                            pollutant={this.props.pollutatnt}
                         />
                     </div>
                 </Col>
@@ -62,7 +62,7 @@ class MainContainer extends Component {
     }
 }
 
-const mapStateToProps = ({ sites }) => {
+const mapStateToProps = ({ sites, aqData }) => {
 
     return {
         sites: sites.sites,
@@ -71,6 +71,7 @@ const mapStateToProps = ({ sites }) => {
         selectedEnvirons: sites.selectedEnvirons,
         textSearch: sites.textSearch,
         environs: sites.environs,
+        pollutant: aqData.pollutant,
         error: sites.error,
         isLoading: sites.loading,
     };

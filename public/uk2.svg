@@ -117,7 +117,8 @@
   <circle cx="449.9" cy="665.8" r="3" fill="red" id="LED6" class="site-mark" />
   <circle cx="440.9" cy="670.6" r="3" fill="red" id="BDMA" class="site-mark" />
 
-
+  <circle cx="449.9" cy="696.6" r="3" fill="red" id="BARN" class="site-mark" />
+  <circle cx="464.9" cy="700.6" r="3" fill="red" id="DCST" class="site-mark" />
 
 
   <text x="404.5" y="698.1" class="site-label" id="NEWC_label">Newcastle Centre</text>
