@@ -44,7 +44,7 @@ class MainContainer extends Component {
                             selectedRegions={this.props.selectedRegions}
                             regionClick={this.props.regionClick}
                             filteredSites={filteredSites}
-                            pollutant={this.props.pollutatnt}
+                            pollutant={this.props.pollutant}
                         />
                     </div>
                 </Col>

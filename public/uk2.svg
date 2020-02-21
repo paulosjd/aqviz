@@ -60,7 +60,6 @@
   <circle cx="397.3" cy="568.2" r="3" fill="red" id="CARL" class="site-mark"/>
   <circle cx="230.17" cy="597.58" r="3" fill="red" id="BEL1" class="site-mark"/>
   <circle cx="232.17" cy="596.58" r="3" fill="green" id="BEL2" class="site-mark"/>
-  <circle cx="483.2" cy="917.2" r="3" fill="red" id="PMTH" class="site-mark"/>
   <circle cx="389.9" cy="703.9" r="3" fill="red" id="LVP" class="site-mark"/>
   <circle cx="430.53" cy="366.2" r="3" fill="red" id="ABD" class="site-mark" />
   <text x="430.53" y="366.2" class="site-label" id="ABD_label" >Aberdeen</text>
@@ -102,11 +101,10 @@
   <text x="404.5" y="698.1" class="site-label" id="WAR_label">Test text</text>
   <circle cx="397.5" cy="699.2" r="3" fill="green" id="WSMR" class="site-mark" />
   <circle cx="385.53" cy="703.2" r="3" fill="pink" id="TRAN" class="site-mark" />
-
-
   <circle cx="450.3" cy="565.2" r="3" fill="red" id="NEWC" class="site-mark" />
-
   <circle cx="463.3" cy="574.5" r="3" fill="red" id="SUNR" class="site-mark" />
+  <circle cx="519.8" cy="671.6" r="3" fill="red" id="HUL2" class="site-mark" />
+  <circle cx="518.2" cy="672.2" r="3" fill="red" id="HULR" class="site-mark" />
   <circle cx="463.6" cy="577.2" r="3" fill="red" id="SUN2" class="site-mark" />
   <circle cx="471.6" cy="599.2" r="3" fill="red" id="MID" class="site-mark" />
   <circle cx="460.6" cy="606.2" r="3" fill="red" id="EAGL" class="site-mark" />
@@ -116,9 +114,84 @@
   <circle cx="448.9" cy="664.2" r="3" fill="red" id="LEED" class="site-mark" />
   <circle cx="449.9" cy="665.8" r="3" fill="red" id="LED6" class="site-mark" />
   <circle cx="440.9" cy="670.6" r="3" fill="red" id="BDMA" class="site-mark" />
-
   <circle cx="449.9" cy="696.6" r="3" fill="red" id="BARN" class="site-mark" />
   <circle cx="464.9" cy="700.6" r="3" fill="red" id="DCST" class="site-mark" />
+  <circle cx="487.4" cy="692.6" r="3" fill="red" id="SCN2" class="site-mark" />
+  <circle cx="454.9" cy="704.6" r="3" fill="red" id="SHBR" class="site-mark" />
+  <circle cx="453.2" cy="706.9" r="3" fill="red" id="SHDG" class="site-mark" />
+  <circle cx="455.7" cy="705.6" r="3" fill="red" id="SHE" class="site-mark" />
+  <circle cx="456.9" cy="720.6" r="3" fill="red" id="CHLG" class="site-mark" />
+  <circle cx="456.9" cy="720.6" r="3" fill="red" id="CHS7" class="site-mark" />
+  <circle cx="456.9" cy="741.6" r="3" fill="red" id="DESA" class="site-mark" />
+  <circle cx="441.7" cy="705.1" r="3" fill="red" id="LB" class="site-mark" />
+  <circle cx="466.9" cy="739.6" r="3" fill="red" id="NOTT" class="site-mark" />
+  <circle cx="465.9" cy="740.6" r="3" fill="red" id="NWBV" class="site-mark" />
+  <circle cx="466.9" cy="767.1" r="3" fill="red" id="LEIR" class="site-mark" />
+  <circle cx="467.9" cy="768.8" r="3" fill="red" id="LECU" class="site-mark" />
+  <circle cx="437.2" cy="780.6" r="3" fill="red" id="BIRR" class="site-mark" />
+  <circle cx="435.9" cy="779.8" r="3" fill="red" id="AGRN" class="site-mark" />
+  <circle cx="430.9" cy="765.8" r="3" fill="red" id="CANK" class="site-mark" />
+  <circle cx="431.9" cy="774.1" r="3" fill="red" id="WAL4" class="site-mark" />
+  <circle cx="452.2" cy="786.6" r="3" fill="red" id="COAL" class="site-mark" />
+  <circle cx="454.9" cy="786.9" r="3" fill="red" id="COBR" class="site-mark" />
+  <circle cx="453.2" cy="799.6" r="3" fill="red" id="LEAM" class="site-mark" />
+  <circle cx="453.9" cy="798.6" r="3" fill="red" id="LEAR" class="site-mark" />
+  <circle cx="397.3" cy="803.6" r="3" fill="red" id="LEOM" class="site-mark" />
+  <circle cx="434.2" cy="780.2" r="3" fill="red" id="BOLD" class="site-mark" />
+  <circle cx="429.9" cy="737.1" r="3" fill="red" id="STKR" class="site-mark" />
+  <circle cx="432.9" cy="737.9" r="3" fill="red" id="STOK" class="site-mark" />
+  <circle cx="540.3" cy="806.2" r="3" fill="red" id="CAM" class="site-mark" />
+  <circle cx="550.3" cy="796.2" r="3" fill="red" id="WFEN" class="site-mark" />
+  <circle cx="509.3" cy="835.2" r="3" fill="red" id="LUTR" class="site-mark" />
+  <circle cx="540.3" cy="806.2" r="3" fill="red" id="CAM" class="site-mark" />
+  <circle cx="599.3" cy="775.2" r="3" fill="red" id="NO12" class="site-mark" />
+  <circle cx="520.3" cy="811.7" r="3" fill="red" id="SDY" class="site-mark" />
+  <circle cx="410.9" cy="767.8" r="3" fill="red" id="TELF" class="site-mark" />
+  <circle cx="450.9" cy="754.6" r="3" fill="red" id="BRTN" class="site-mark" />
+  <circle cx="384.9" cy="427.3" r="3" fill="red" id="DUND" class="site-mark" />
+  <circle cx="592.3" cy="836.2" r="3" fill="red" id="OSY" class="site-mark" />
+  <circle cx="573.3" cy="857.5" r="3" fill="red" id="SEND" class="site-mark" />
+  <circle cx="562.8" cy="858.5" r="3" fill="red" id="HOPE" class="site-mark" />
+  <circle cx="554.8" cy="861.5" r="3" fill="red" id="THUR" class="site-mark" />
+  <circle cx="471.3" cy="845.0" r="3" fill="red" id="OX" class="site-mark" />
+  <circle cx="471.9" cy="846.6" r="3" fill="red" id="OX8" class="site-mark" />
+  <circle cx="484.6" cy="866.6" r="3" fill="red" id="REA5" class="site-mark" />
+  <circle cx="485.9" cy="867.9" r="3" fill="red" id="REA1" class="site-mark" />
+  <circle cx="596.9" cy="884.2" r="3" fill="red" id="CANT" class="site-mark" />
+  <circle cx="533.9" cy="892.2" r="3" fill="red" id="HORE" class="site-mark" />
+  <circle cx="483.2" cy="917.2" r="3" fill="red" id="PMTH" class="site-mark"/>
+  <circle cx="530.8" cy="917.0" r="3" fill="red" id="BRT3" class="site-mark"/>
+  <circle cx="439.8" cy="925.0" r="3" fill="red" id="BORN" class="site-mark"/>
+  <circle cx="465.5" cy="909.8" r="3" fill="red" id="SA33" class="site-mark"/>
+  <circle cx="467.5" cy="911.8" r="3" fill="red" id="SOUT" class="site-mark"/>
+  <circle cx="516.8" cy="916.2" r="3" fill="red" id="WTHG" class="site-mark"/>
+  <circle cx="483.2" cy="917.2" r="3" fill="red" id="PMTH" class="site-mark"/>
+  <circle cx="516.8" cy="916.2" r="3" fill="red" id="WTHG" class="site-mark"/>
+  <circle cx="552.8" cy="917.5" r="3" fill="red" id="EB" class="site-mark"/>
+  <circle cx="547.8" cy="918.0" r="3" fill="red" id="LH" class="site-mark"/>
+  <circle cx="445.8" cy="925.0" r="3" fill="red" id="CHBR" class="site-mark"/>
+  <circle cx="530.8" cy="917.0" r="3" fill="red" id="LH" class="site-mark"/>
+  <circle cx="560.3" cy="871.5" r="3" fill="red" id="ROCH" class="site-mark" />
+  <circle cx="566.3" cy="867.5" r="3" fill="red" id="CHAT" class="site-mark" />
+  <circle cx="465.5" cy="885.8" r="3" fill="red" id="CHBO" class="site-mark"/>
+  <circle cx="610.3" cy="802.2" r="3" fill="red" id="SIB" class="site-mark" />
+  <circle cx="546.6" cy="861.8" r="3" fill="red" id="BEX" class="site-mark" />
+  <circle cx="541.0" cy="862.0" r="3" fill="red" id="LON6" class="site-mark" />
+  <circle cx="535.9" cy="859.9" r="3" fill="red" id="CLL2" class="site-mark" />
+  <circle cx="534.0" cy="864.9" r="3" fill="red" id="HORS" class="site-mark" />
+  <circle cx="530.6" cy="859.9" r="3" fill="red" id="MY1" class="site-mark" />
+  <circle cx="530.2" cy="856.9" r="3" fill="red" id="CA1" class="site-mark" />
+  <circle cx="517.0" cy="862.9" r="3" fill="red" id="HRL" class="site-mark" />
+  <circle cx="525.2" cy="860.9" r="3" fill="red" id="KC1" class="site-mark" />
+  <circle cx="333.8" cy="896.2" r="3" fill="red" id="BPLE" class="site-mark" />
+  <circle cx="409.8" cy="878.2" r="3" fill="red" id="BATH" class="site-mark" />
+  <circle cx="400.8" cy="870.2" r="3" fill="red" id="BRS8" class="site-mark" />
+  <circle cx="401.8" cy="872.2" r="3" fill="red" id="BR11" class="site-mark" />
+  <circle cx="357.1" cy="923.2" r="3" fill="red" id="EX" class="site-mark" />
+  <circle cx="346.1" cy="932.2" r="3" fill="red" id="YW" class="site-mark" />
+  <circle cx="324.1" cy="947.2" r="3" fill="red" id="PLYM" class="site-mark" />
+  <circle cx="325.1" cy="944.2" r="3" fill="red" id="PLYR" class="site-mark" />
+  <circle cx="395.8" cy="903.2" r="3" fill="red" id="MACK" class="site-mark" />
 
 
   <text x="404.5" y="698.1" class="site-label" id="NEWC_label">Newcastle Centre</text>

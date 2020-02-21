@@ -32,13 +32,15 @@ class SiteTable extends Component {
             rows = <tr><td > </td><td className='value_cell'> </td></tr>
         } else {
             for (let site of filteredSites) {
-                rows.push(
-                    <SiteRow
-                        pollutant={this.props.pollutant}
-                        // onSiteClick={props.onSiteClick}
-                        site={site} key={site.id}
-                    />
-                );
+                if (site[this.props.pollutant]) {
+                    rows.push(
+                        <SiteRow
+                            pollutant={this.props.pollutant}
+                            // onSiteClick={props.onSiteClick}
+                            site={site} key={site.id}
+                        />
+                    );
+                }
             }
         }
         return (

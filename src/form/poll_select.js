@@ -15,28 +15,13 @@ export default () => {
             toggle={() => setDropdownOpen(!dropdownOpen)}
         >
             <DropdownToggle className='pollutant_select' caret>
-                {pollutant === 'ozone' ? 'Ozone' : pollutant.toUpperCase()}</DropdownToggle>
+                {pollutant === 'ozone' ? 'Ozone' : pollutant === 'no2' ? 'NO₂' : pollutant.toUpperCase()}
+            </DropdownToggle>
             <DropdownMenu>
-                <DropdownItem
-                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
-                >
-                    PM10
-                </DropdownItem>
-                <DropdownItem
-                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
-                >
-                    PM25
-                </DropdownItem>
-                <DropdownItem
-                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
-                >
-                    NO₂
-                </DropdownItem>
-                <DropdownItem
-                    onClick={(e) => dispatch({type: POLLUTANT_SELECT, value: e.target.innerHTML.toLowerCase()})}
-                >
-                    Ozone
-                </DropdownItem>
+                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'pm10'})}>PM10</DropdownItem>
+                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'pm25'})}>PM25</DropdownItem>
+                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'no2'})}>NO₂</DropdownItem>
+                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'ozone'})}>Ozone</DropdownItem>
             </DropdownMenu>
         </ButtonDropdown>
     )

@@ -1,18 +1,8 @@
 import React from "react";
 import { ReactSVG } from 'react-svg'
+import { getColorFromSiteCode } from "./utils";
 
 const RegionsMap = ({regions, regionClick, selectedRegions, filteredSites, pollutant}) => {
-
-    function getColorFromSiteCode(s){
-        const ind = filteredSites.map(x => x.site_code).indexOf(s);
-        // TODO make a dictionary/map to for pollutant and values - and use this in the color scale on svg
-        if (ind > -1){
-            if (filteredSites[ind][pollutant] > 15) return 'red';
-            if (filteredSites[ind][pollutant] > 8) return 'orange';
-            if (filteredSites[ind][pollutant] > 0) return 'green' ;
-        } else console.log('not found');
-        return 'grey'
-    }
 
     function setTextDisplayStyle(elem, display){
         if (elem.tagName === 'circle'){
@@ -21,8 +11,6 @@ const RegionsMap = ({regions, regionClick, selectedRegions, filteredSites, pollu
             }
         }
     }
-
-    // TODO -- On pollutant change need to make the block in afterInjection run again
 
     return (
         <ReactSVG
@@ -34,9 +22,10 @@ const RegionsMap = ({regions, regionClick, selectedRegions, filteredSites, pollu
                 }
             }}
             beforeInjection={svg => {
-                svg.setAttribute("transform", "scale(0.70) translate(-205 -490.5)");
+                svg.setAttribute("transform", "scale(0.70) translate(-230 -490.5)");
             }}
             afterInjection={(err, svg) => {
+                svg.onwheel = (e) => e.preventDefault();
                 for (let child of svg.children){
                     const title = child.attributes.title;
                     if (title && selectedRegions.includes(title.value)){
@@ -45,8 +34,10 @@ const RegionsMap = ({regions, regionClick, selectedRegions, filteredSites, pollu
                     const selectedSiteCodes = filteredSites.map(x => x.site_code);
                     if (selectedSiteCodes.includes(child.id)){
                         child.setAttribute('style',
-                            'display: initial; fill: ' + getColorFromSiteCode(child.id));
+                            'display: initial; fill: ' + getColorFromSiteCode(child.id, filteredSites, pollutant)
+                        );
                         child.onmouseover = () => {setTextDisplayStyle(child, 'block')};
+                        // setTextDisplay depends on after circle having <text x="404.5" y="698.1" class="site-label" id="NEWC_label">Newcastle Centre</text
                         child.onmouseout = () => setTextDisplayStyle(child, 'hidden')
                     }
                 }
