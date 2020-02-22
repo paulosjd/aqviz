@@ -1,4 +1,6 @@
-import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK, TEXT_SEARCH_CHANGE,
+import {
+    FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK, TEXT_SEARCH_CHANGE,
+    SITE_HIGHLIGHT,
 } from './constants'
 
 const initialState = {
@@ -7,6 +9,7 @@ const initialState = {
     selectedRegions: [],
     environs: [],
     selectedEnvirons: [],
+    hoverSiteCode: '',
     textSearch: '',
     loading: false,
     error: null,
@@ -46,6 +49,8 @@ export default function sitesReducer(state = initialState, action) {
                 regionList.push(action.value)
             }
             return { ...state, selectedRegions: regionList };
+        case SITE_HIGHLIGHT:
+            return { ...state, hoverSiteCode: action.value };
         case TEXT_SEARCH_CHANGE:
             return { ...state, textSearch: action.value };
         default:

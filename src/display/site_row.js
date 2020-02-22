@@ -1,21 +1,18 @@
 import React from "react";
+import { getColorForPollutantAndValue } from './utils'
 
+const SiteRow = ({site, pollutant, hoverSiteCode}) => {
 
-const SiteRow = ({site, pollutant}) => {
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     const siteCode = e.currentTarget.dataset.sitecode;
-    //     const siteName = e.currentTarget.dataset.sitename;
-    //     props.onSiteClick(siteCode, siteName);
-    //     window.scrollTo(0, 0);
-    // }
-
+    let colorStyle = {};
+    if (hoverSiteCode === site.site_code) {
+        colorStyle = { backgroundColor: getColorForPollutantAndValue(pollutant, site[pollutant])}
+    }
     return (
-        <tr>
+        <tr >
             <td>
                 <span>{site.name}</span>
             </td>
-            <td className='value_cell'>
+            <td className='value_cell' style={colorStyle}>
                 {site[pollutant]}
             </td>
         </tr>

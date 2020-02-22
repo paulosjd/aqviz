@@ -1,13 +1,9 @@
 
 const colorBoundaries = {
-    // 0-15                    75 +
-    // low  low mid mid high high
-    'pm10': [5, 8, 14, 19, 22],
-    // 'pm10': [20, 40, 60, 80, 100],
-    'pm25': [12, 30, 40, 50, 70],
-    'no2': [80, 160, 250, 340, 430],
-    'ozone': [40, 75, 120, 150, 180]
-    // 0: 0-40  1: 40-75  2: 75-120  3: 120-160  4: 160-200 5: 200+
+    'pm10': [10, 20, 30, 40, 50, 60, 70, 80, 100],
+    'pm25': [6, 12, 18, 24, 30, 36, 42, 50, 70],
+    'no2': [40, 80, 120, 160, 200, 250, 340, 430],
+    'ozone': [20, 40, 60, 80, 100, 125, 150, 180]
 };
 
 export function getColorForPollutantAndValue(poll, val){
@@ -20,39 +16,29 @@ export function getColorForPollutantAndValue(poll, val){
     });
     switch (arrayInd) {
         case 0:
-            return '#a6d854';  // very low
+            return '#a6d854';
         case 1:
-            return '#dce649';  // low
+            return '#dce649';
         case 2:
-            return '#ffd92f';  // med-low
+            return '#e6be1f';
         case 3:
-            return '#ffaf24';  // med-high
+            return '#ffaf24';
         case 4:
-            return 'red';  // high
+            return '#ff9c1c';
         case 5:
-            return 'red';  // very high
+            return '#ff8308';
+        case 6:
+            return '#ff7105';
+        case 7:
+            return '#ff5c16';
+        case 8:
+            return '#ff4411';
+        case 9:
+            return '#ff0500';
         default:
             return 'white'
     }
 }
-
-
-// switch (arrayInd) {
-//     case 0:
-//         return '#a6d854';  // very low
-//     case 1:
-//         return '#e3ff33';  // low
-//     case 2:
-//         return '#ffd92f';  // med-low
-//     case 3:
-//         return '#ffd92f';  // med-high
-//     case 4:
-//         return 'red';  // high
-//     case 5:
-//         return 'red';  // very high
-//     default:
-//         return 'white'
-// }
 
 export function getColorFromSiteCode(id_str, sites, pollutant){
     const ind = sites.map(x => x.site_code).indexOf(id_str);

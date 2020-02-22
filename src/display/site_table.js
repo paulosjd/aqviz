@@ -35,6 +35,7 @@ class SiteTable extends Component {
                 if (site[this.props.pollutant]) {
                     rows.push(
                         <SiteRow
+                            hoverSiteCode={this.props.hoverSiteCode}
                             pollutant={this.props.pollutant}
                             // onSiteClick={props.onSiteClick}
                             site={site} key={site.id}
@@ -83,6 +84,7 @@ const mapStateToProps = ({ sites, aqData }) => {
         textSearch: sites.textSearch,
         selectedRegions: sites.selectedRegions,
         selectedEnvirons: sites.selectedEnvirons,
+        hoverSiteCode: sites.hoverSiteCode,
     };
 };
 

@@ -130,3 +130,7 @@ text.site-label {
   position: absolute;
   cursor: default;
 }
+
+.highlight_row {
+  background-color: #c3eaff;
+}
