@@ -5,6 +5,7 @@ import {
     FETCH_SITES_FAILURE,
     TEXT_SEARCH_CHANGE,
     REGION_CLICK,
+    SITE_HIGHLIGHT,
 } from './constants'
 
 export const fetchSites = () => {
@@ -25,4 +26,8 @@ export const setTextInput = (val) => {
 
 export const regionClick = (val, only_add) => {
     return { type: REGION_CLICK, value: val, only_add: only_add}
+};
+
+export const setSiteHighlight = (val) => {
+    return { type: SITE_HIGHLIGHT, value: val }
 };

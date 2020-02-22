@@ -44,12 +44,15 @@ code {
   height: 500px;
   overflow: hidden;
   margin-top: 26px;
+  background-color: aliceblue;
+}
 
+path {
+  fill: #c5c4c3;
 }
 
 path:hover {
-  opacity: 0.5;
-  fill: #ffe090;
+  fill: #83816f;
 }
 
 .list-group-item {
@@ -123,15 +126,7 @@ path:hover {
 text.site-label {
   display: none;
   fill: black;
-  font-size: 24px;
+  font-size: 14px;
   position: absolute;
   cursor: default;
-}
-.foo{
-  color: green;
-  color: green;
-  color: green;
-  color: green;
-  color: green;
-  color: green;
 }

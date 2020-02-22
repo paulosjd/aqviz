@@ -59,264 +59,265 @@
      id="ukIM1" />
 
   <circle cx="196.17" cy="618.2" r="3" fill="white" id="ARM6" class="site-mark"/>
-  <text x="196.17" y="618.2" class="site-label" >Armagh Roadside</text>
-  <circle cx="232.17" cy="596.58" r="3" fill="green" id="BEL2" class="site-mark"/>
-  <text x="232.17" y="596.58" class="site-label" >Belfast Centre</text>
+  <circle cx="232.17" cy="596.58" r="3" fill="white" id="BEL2" class="site-mark"/>
   <circle cx="230.17" cy="597.58" r="3" fill="white" id="BEL1" class="site-mark"/>
-  <text x="230.17" y="597.58" class="site-label" >Belfast Stockmans Lane</text>
   <circle cx="136.17" cy="610.2" r="3" fill="white" id="LNVR" class="site-mark" />
-  <text x="136.17" y="610.2" class="site-label" >Lough Navar</text>
   <circle cx="162.2" cy="564.9" r="3" fill="white" id="DERR" class="site-mark" />
-  <text x="162.2" y="564.9" class="site-label" >Derry Rosemount</text>
   <circle cx="430.53" cy="366.2" r="3" fill="white" id="ABD" class="site-mark"/>
-  <text x="430.53" y="366.2" class="site-label" >Aberdeen</text>
   <circle cx="429.93" cy="366.1" r="3" fill="white" id="ABD7" class="site-mark"/>
-  <text x="429.93" y="366.1" class="site-label" >Aberdeen Union Street Roadside</text>
   <circle cx="429.13" cy="367.4" r="3" fill="white" id="ABD8" class="site-mark"/>
-  <text x="429.13" y="367.4" class="site-label" >Aberdeen Wellington Road</text>
   <circle cx="319.13" cy="337.4" r="3" fill="white" id="INV2" class="site-mark"/>
-  <text x="319.13" y="337.4" class="site-label" >Inverness</text>
   <circle cx="279.13" cy="389.4" r="3" fill="white" id="FW" class="site-mark"/>
-  <text x="279.13" y="389.4" class="site-label" >Fort William</text>
   <circle cx="318.9" cy="482.4" r="3" fill="white" id="GHSR" class="site-mark"/>
-  <text x="318.9" y="482.4" class="site-label" >Glasgow High Street</text>
   <circle cx="318.0" cy="481.4" r="3" fill="white" id="GLKP" class="site-mark"/>
-  <text x="318.0" y="481.4" class="site-label" >Glasgow Townhead</text>
   <circle cx="366.9" cy="481.3" r="3" fill="white" id="ED3" class="site-mark"/>
-  <text x="366.9" y="481.3" class="site-label" >Edinburgh St Leonards</text>
   <circle cx="366.9" cy="481.3" r="3" fill="white" id="ESK" class="site-mark"/>
-  <text x="366.9" y="481.3" class="site-label" >Eskdalemuir</text>
   <circle cx="362.9" cy="492.3" r="3" fill="white" id="ACTH" class="site-mark"/>
-  <text x="362.9" y="492.3" class="site-label" >Auchencorth Moss</text>
   <circle cx="364.1" cy="503.3" r="3" fill="white" id="PEEB" class="site-mark"/>
-  <text x="364.1" y="503.3" class="site-label" >Peebles</text>
   <circle cx="347.5" cy="474.0" r="3" fill="white" id="GRAN" class="site-mark"/>
-  <text x="347.5" y="474.0" class="site-label" >Grangemouth</text>
   <circle cx="348.0" cy="474.4" r="3" fill="white" id="GRA2" class="site-mark"/>
-  <text x="348.0" y="474.4" class="site-label" >Grangemouth Moray</text>
   <circle cx="472.53" cy="56.2" r="3" fill="white" id="LERW" class="site-mark"/>
-  <text x="472.53" y="56.2" class="site-label" >Lerwick</text>
   <circle cx="373.8" cy="780.2" r="3" fill="white" id="AH" class="site-mark"/>
-  <text x="373.8" y="780.2" class="site-label" >Aston Hill</text>
   <circle cx="372.53" cy="866.2" r="3" fill="white" id="CARD" class="site-mark"/>
-  <text x="372.53" y="866.2" class="site-label" >Cardiff Centre</text>
   <circle cx="391.8" cy="850.2" r="3" fill="white" id="CHP" class="site-mark"/>
-  <text x="391.8" y="850.2" class="site-label" >Chepstow A48</text>
   <circle cx="382.53" cy="842.2" r="3" fill="white" id="CWMB" class="site-mark"/>
-  <text x="382.53" y="842.2" class="site-label" >Cwmbran</text>
   <circle cx="381.8" cy="856.2" r="3" fill="white" id="NPT3" class="site-mark"/>
-  <text x="381.8" y="856.2" class="site-label" >Newport</text>
   <circle cx="296.3" cy="836.2" r="3" fill="white" id="PEMB" class="site-mark"/>
-  <text x="296.3" y="836.2" class="site-label" >Narberth</text>
   <circle cx="348.53" cy="856.2" r="3" fill="white" id="PT4" class="site-mark"/>
-  <text x="348.53" y="856.2" class="site-label" >Port Talbot Margam</text>
   <circle cx="331.8" cy="853.2" r="3" fill="white" id="SWA1" class="site-mark"/>
-  <text x="331.8" y="853.2" class="site-label" >Swansea Roadside</text>
   <circle cx="377.3" cy="732.2" r="3" fill="white" id="WREX" class="site-mark"/>
-  <text x="377.3" y="732.2" class="site-label" >Wrexham</text>
   <circle cx="385.53" cy="698.2" r="3" fill="blue" id="BBRD" class="site-mark"/>
-  <text x="385.53" y="698.2" class="site-label" >Birkenhead Borough Road</text>
   <circle cx="386.5" cy="668.2" r="3" fill="white" id="BLC2" class="site-mark"/>
-  <text x="386.5" y="668.2" class="site-label" >Blackpool Marton:</text>
   <circle cx="415.5" cy="688.2" r="3" fill="white" id="BURW" class="site-mark"/>
-  <text x="415.5" y="688.2" class="site-label" >Bury Whitefield Roadside</text>
   <circle cx="397.3" cy="568.2" r="3" fill="white" id="CAR" class="site-mark"/>
-  <text x="397.3" y="568.2" class="site-label" >Carlisle Roadside</text>
   <circle cx="418.6" cy="701.2" r="3" fill="white" id="GLAZ" class="site-mark"/>
-  <text x="418.6" y="701.2" class="site-label" >Glazebury</text>
   <circle cx="389.9" cy="703.9" r="3" fill="white" id="LVP" class="site-mark"/>
-  <text x="389.9" y="703.9" class="site-label" >Liverpool Speke</text>
   <circle cx="430.5" cy="699.2" r="3" fill="white" id="MAN3" class="site-mark"/>
-  <text x="430.5" y="699.2" class="site-label" >Manchester Piccadilly</text>
   <circle cx="430.5" cy="705.2" r="3" fill="white" id="MAHG" class="site-mark"/>
-  <text x="430.5" y="705.2" class="site-label" >Manchester Sharston</text>
   <circle cx="405.5" cy="676.2" r="3" fill="white" id="PRES" class="site-mark"/>
-  <text x="405.5" y="676.2" class="site-label" >Preston</text>
   <circle cx="426.1" cy="699.2" r="3" fill="brown" id="ECCL" class="site-mark"/>
-  <text x="426.1" y="699.2" class="site-label" >Salford Eccles</text>
   <circle cx="435.5" cy="695.2" r="3" fill="white" id="CW" class="site-mark"/>
-  <text x="435.5" y="695.2" class="site-label" >Shaw Crompton Way</text>
-  <circle cx="397.5" cy="692.2" r="3" fill="green" id="SHLW" class="site-mark"/>
-  <text x="397.5" y="692.2" class="site-label" >St Helens Linkway</text>
-  <circle cx="404.5" cy="698.2" r="3" fill="green" id="WAR" class="site-mark"/>
-  <text x="404.5" y="698.2" class="site-label" >Warrington</text>
-  <circle cx="397.5" cy="699.2" r="3" fill="green" id="WSMR" class="site-mark"/>
-  <text x="397.5" y="699.2" class="site-label" >Widnes Milton Road</text>
+  <circle cx="397.5" cy="692.2" r="3" fill="white" id="SHLW" class="site-mark"/>
+  <circle cx="404.5" cy="698.2" r="3" fill="white" id="WAR" class="site-mark"/>
+  <circle cx="397.5" cy="699.2" r="3" fill="white" id="WSMR" class="site-mark"/>
   <circle cx="407.5" cy="689.2" r="3" fill="white" id="WIG5" class="site-mark"/>
-  <text x="407.5" y="689.2" class="site-label" >Wigan Centre</text>
   <circle cx="386.5" cy="668.2" r="3" fill="white" id="BLC2" class="site-mark" />
-  <text x="386.5" y="668.2" class="site-label" >Blackpool Marton</text>
   <circle cx="450.3" cy="565.2" r="3" fill="white" id="NEWC" class="site-mark"/>
-  <text x="450.3" y="565.2" class="site-label" >Newcastle Centre</text>
   <circle cx="463.6" cy="577.2" r="3" fill="white" id="SUN2" class="site-mark"/>
-  <text x="463.6" y="577.2" class="site-label" >Sunderland Silksworth</text>
   <circle cx="463.3" cy="574.5" r="3" fill="white" id="SUNR" class="site-mark"/>
-  <text x="463.3" y="574.5" class="site-label" >Sunderland Wessington Way</text>
   <circle cx="471.6" cy="599.2" r="3" fill="white" id="MID" class="site-mark"/>
-  <text x="471.6" y="599.2" class="site-label" >Middlesbrough</text>
   <circle cx="460.6" cy="606.2" r="3" fill="white" id="EAGL" class="site-mark"/>
-  <text x="460.6" y="606.2" class="site-label" >Stockton-on-Tees Eaglescliffe</text>
   <circle cx="497.6" cy="633.2" r="3" fill="white" id="HM" class="site-mark"/>
-  <text x="497.6" y="633.2" class="site-label" >High Muffles</text>
   <circle cx="465.6" cy="652.2" r="3" fill="white" id="YK10" class="site-mark"/>
-  <text x="465.6" y="652.2" class="site-label" >York Bootham</text>
   <circle cx="467.6" cy="654.2" r="3" fill="white" id="YK11" class="site-mark"/>
-  <text x="467.6" y="654.2" class="site-label" >York Fishergate</text>
   <circle cx="519.8" cy="671.6" r="3" fill="white" id="HUL2" class="site-mark" />
-  <text x="519.8" y="671.6" class="site-label" >Hull Freetown</text>
   <circle cx="518.2" cy="672.2" r="3" fill="white" id="HULR" class="site-mark" />
-  <text x="518.2" y="672.2" class="site-label" >Hull Holderness Road</text>
   <circle cx="447.9" cy="664.2" r="3" fill="white" id="LEED" class="site-mark" />
-  <text x="447.9" y="664.2" class="site-label" >Leeds Centre</text>
   <circle cx="449.9" cy="665.2" r="3" fill="white" id="LED6" class="site-mark" />
-  <text x="449.9" y="665.2" class="site-label" >Leeds Headingley Kerbside</text>
   <circle cx="440.9" cy="670.6" r="3" fill="white" id="BDMA" class="site-mark" />
-  <text x="440.9" y="670.6" class="site-label" >Bradford Mayo Avenue</text>
   <circle cx="449.9" cy="696.6" r="3" fill="white" id="BAR3" class="site-mark" />
-  <text x="449.9" y="696.6" class="site-label" >Barnsley Gawber</text>
   <circle cx="464.9" cy="700.6" r="3" fill="white" id="DCST" class="site-mark" />
-  <text x="464.9" y="700.6" class="site-label" >Doncaster A630 Cleveland Street</text>
   <circle cx="487.4" cy="692.6" r="3" fill="white" id="SCN2" class="site-mark" />
-  <text x="487.4" y="692.6" class="site-label" >Scunthorpe Town</text>
   <circle cx="454.9" cy="704.6" r="3" fill="white" id="SHBR" class="site-mark" />
-  <text x="454.9" y="704.6" class="site-label" >Sheffield Barnsley Road</text>
   <circle cx="453.2" cy="706.9" r="3" fill="white" id="SHDG" class="site-mark" />
-  <text x="453.2" y="706.9" class="site-label" >Sheffield Devonshire Green</text>
   <circle cx="455.7" cy="705.6" r="3" fill="white" id="SHE" class="site-mark" />
-  <text x="455.7" y="705.6" class="site-label" >Sheffield Tinsley</text>
   <circle cx="450.9" cy="754.6" r="3" fill="white" id="BRTN" class="site-mark" />
-  <text x="450.9" y="754.6" class="site-label" >Burton-on-Trent Horninglow</text>
   <circle cx="456.1" cy="720.0" r="3" fill="white" id="CHLG" class="site-mark" />
-  <text x="456.1" y="720.0" class="site-label" >Chesterfield Loundsley Green</text>
   <circle cx="456.9" cy="721.6" r="3" fill="white" id="CHS7" class="site-mark" />
-  <text x="456.9" y="721.6" class="site-label" >Chesterfield Roadside</text>
   <circle cx="456.9" cy="741.6" r="3" fill="white" id="DESA" class="site-mark" />
-  <text x="456.9" y="741.6" class="site-label" >Derby St Alkmunds Way</text>
   <circle cx="441.7" cy="705.1" r="3" fill="white" id="LB" class="site-mark" />
-  <text x="441.7" y="705.1" class="site-label" >Ladybower</text>
   <circle cx="466.9" cy="767.1" r="3" fill="white" id="LEIR" class="site-mark" />
-  <text x="466.9" y="767.1" class="site-label" >Leicester A594 Roadside</text>
   <circle cx="467.9" cy="768.8" r="3" fill="white" id="LECU" class="site-mark" />
-  <text x="467.9" y="768.8" class="site-label" >Leicester University</text>
   <circle cx="466.9" cy="739.6" r="3" fill="white" id="NOTT" class="site-mark" />
-  <text x="466.9" y="739.6" class="site-label" >Nottingham Centre</text>
   <circle cx="465.9" cy="740.6" r="3" fill="white" id="NWBV" class="site-mark" />
-  <text x="465.9" y="740.6" class="site-label" >Nottingham Western Boulevard</text>
   <circle cx="437.2" cy="780.6" r="3" fill="white" id="BIRR" class="site-mark" />
-  <text x="437.2" y="780.6" class="site-label" >Birmingham A4540 Roadside</text>
   <circle cx="435.9" cy="779.8" r="3" fill="white" id="AGRN" class="site-mark" />
-  <text x="435.9" y="779.8" class="site-label" >Birmingham Acocks Green</text>
   <circle cx="430.9" cy="765.8" r="3" fill="white" id="CANK" class="site-mark" />
-  <text x="430.9" y="765.8" class="site-label" >Cannock A5190 Roadside</text>
   <circle cx="431.9" cy="774.1" r="3" fill="white" id="WAL4" class="site-mark" />
-  <text x="431.9" y="774.1" class="site-label" >Walsall Woodlands</text>
   <circle cx="452.2" cy="786.6" r="3" fill="white" id="COAL" class="site-mark" />
-  <text x="452.2" y="786.6" class="site-label" >Coventry Allesley</text>
   <circle cx="454.9" cy="786.9" r="3" fill="white" id="COBR" class="site-mark" />
-  <text x="454.9" y="786.9" class="site-label" >Coventry Binley Road</text>
   <circle cx="453.2" cy="799.6" r="3" fill="white" id="LEAM" class="site-mark" />
-  <text x="453.2" y="799.6" class="site-label" >Leamington Spa</text>
   <circle cx="453.9" cy="798.6" r="3" fill="white" id="LEAR" class="site-mark" />
-  <text x="453.9" y="798.6" class="site-label" >Leamington Spa Rugby Road</text>
   <circle cx="397.3" cy="803.6" r="3" fill="white" id="LEOM" class="site-mark" />
-  <text x="397.3" y="803.6" class="site-label" >Leominster</text>
   <circle cx="434.2" cy="780.2" r="3" fill="white" id="BOLD" class="site-mark" />
-  <text x="434.2" y="780.2" class="site-label" >Oldbury Birmingham Road</text>
   <circle cx="429.9" cy="737.1" r="3" fill="white" id="STKR" class="site-mark" />
-  <text x="429.9" y="737.1" class="site-label" >Stoke-on-Trent A50 Roadside</text>
   <circle cx="432.9" cy="737.9" r="3" fill="white" id="STOK" class="site-mark" />
-  <text x="432.9" y="737.9" class="site-label" >Stoke-on-Trent Centre</text>
   <circle cx="410.9" cy="767.8" r="3" fill="white" id="TELF" class="site-mark" />
-  <text x="410.9" y="767.8" class="site-label" >Telford Hollinswood</text>
   <circle cx="540.3" cy="806.2" r="3" fill="white" id="CAM" class="site-mark" />
-  <text x="540.3" y="806.2" class="site-label" >Cambridge Roadside</text>
   <circle cx="509.3" cy="835.2" r="3" fill="white" id="LUTR" class="site-mark" />
-  <text x="509.3" y="835.2" class="site-label" >Luton A505 Roadside</text>
   <circle cx="599.3" cy="775.2" r="3" fill="white" id="NO12" class="site-mark" />
-  <text x="599.3" y="775.2" class="site-label" >Norwich Lakenfields</text>
   <circle cx="520.3" cy="811.7" r="3" fill="white" id="SDY" class="site-mark" />
-  <text x="520.3" y="811.7" class="site-label" >Sandy Roadside</text>
   <circle cx="610.3" cy="802.2" r="3" fill="white" id="SIB" class="site-mark" />
-  <text x="610.3" y="802.2" class="site-label" >Sibton</text>
   <circle cx="573.3" cy="857.5" r="3" fill="white" id="SEND" class="site-mark" />
-  <text x="573.3" y="857.5" class="site-label" >Southend-on-Sea</text>
   <circle cx="592.3" cy="836.2" r="3" fill="white" id="OSY" class="site-mark" />
-  <text x="592.3" y="836.2" class="site-label" >St Osyth</text>
   <circle cx="562.8" cy="858.5" r="3" fill="white" id="HOPE" class="site-mark" />
-  <text x="562.8" y="858.5" class="site-label" >Stanford-le-Hope Roadside</text>
   <circle cx="554.8" cy="861.5" r="3" fill="white" id="THUR" class="site-mark" />
-  <text x="554.8" y="861.5" class="site-label" >Thurrock</text>
   <circle cx="550.3" cy="796.2" r="3" fill="white" id="WFEN" class="site-mark" />
-  <text x="550.3" y="796.2" class="site-label" >Wicken Fen</text>
   <circle cx="439.8" cy="925.0" r="3" fill="white" id="BORN" class="site-mark"/>
-  <text x="439.8" y="925.0" class="site-label" >Bournemouth</text>
   <circle cx="530.8" cy="917.0" r="3" fill="white" id="BRT3" class="site-mark"/>
-  <text x="530.8" y="917.0" class="site-label" >Brighton Preston Park</text>
   <circle cx="596.9" cy="884.2" r="3" fill="white" id="CANT" class="site-mark" />
-  <text x="596.9" y="884.2" class="site-label" >Canterbury</text>
   <circle cx="566.3" cy="867.5" r="3" fill="white" id="CHAT" class="site-mark" />
-  <text x="566.3" y="867.5" class="site-label" >Chatham Roadside</text>
   <circle cx="465.5" cy="885.8" r="3" fill="white" id="CHBO" class="site-mark"/>
-  <text x="465.5" y="885.8" class="site-label" >Chilbolton Observatory</text>
   <circle cx="445.8" cy="925.0" r="3" fill="white" id="CHBR" class="site-mark"/>
-  <text x="445.8" y="925.0" class="site-label" >Christchurch Barrack Road</text>
   <circle cx="552.8" cy="917.5" r="3" fill="white" id="EB" class="site-mark"/>
-  <text x="552.8" y="917.5" class="site-label" >Eastbourne</text>
   <circle cx="533.9" cy="892.2" r="3" fill="white" id="HORE" class="site-mark" />
-  <text x="533.9" y="892.2" class="site-label" >Horley</text>
   <circle cx="547.8" cy="918.0" r="3" fill="white" id="LH" class="site-mark"/>
-  <text x="547.8" y="918.0" class="site-label" >Lullington Heath</text>
   <circle cx="471.3" cy="845.0" r="3" fill="white" id="OX" class="site-mark" />
-  <text x="471.3" y="845.0" class="site-label" >Oxford Centre Roadside</text>
   <circle cx="471.9" cy="846.6" r="3" fill="white" id="OX8" class="site-mark" />
-  <text x="471.9" y="846.6" class="site-label" >Oxford St Ebbes</text>
   <circle cx="483.2" cy="917.2" r="3" fill="white" id="PMTH" class="site-mark"/>
-  <text x="483.2" y="917.2" class="site-label" >Portsmouth</text>
   <circle cx="484.6" cy="866.6" r="3" fill="white" id="REA5" class="site-mark" />
-  <text x="484.6" y="866.6" class="site-label" >Reading London Road</text>
   <circle cx="485.9" cy="867.9" r="3" fill="white" id="REA1" class="site-mark" />
-  <text x="485.9" y="867.9" class="site-label" >Reading New Town</text>
   <circle cx="560.3" cy="871.5" r="3" fill="white" id="ROCH" class="site-mark" />
-  <text x="560.3" y="871.5" class="site-label" >Rochester Stoke</text>
   <circle cx="465.5" cy="909.8" r="3" fill="white" id="SA33" class="site-mark"/>
-  <text x="465.5" y="909.8" class="site-label" >Southampton A33</text>
   <circle cx="467.5" cy="911.8" r="3" fill="white" id="SOUT" class="site-mark"/>
-  <text x="467.5" y="911.8" class="site-label" >Southampton Centre</text>
   <circle cx="516.8" cy="916.2" r="3" fill="white" id="WTHG" class="site-mark"/>
-  <text x="516.8" y="916.2" class="site-label" >Worthing A27 Roadside</text>
   <circle cx="530.2" cy="856.9" r="3" fill="white" id="CA1" class="site-mark" />
-  <text x="530.2" y="856.9" class="site-label" >Camden Kerbside</text>
   <circle cx="546.6" cy="861.8" r="3" fill="white" id="BEX" class="site-mark" />
-  <text x="546.6" y="861.8" class="site-label" >London Bexley</text>
   <circle cx="535.9" cy="859.9" r="3" fill="white" id="CLL2" class="site-mark" />
-  <text x="535.9" y="859.9" class="site-label" >London Bloomsbury</text>
   <circle cx="541.0" cy="862.0" r="3" fill="white" id="LON6" class="site-mark" />
-  <text x="541.0" y="862.0" class="site-label" >London Eltham</text>
   <circle cx="534.0" cy="864.9" r="3" fill="white" id="HORS" class="site-mark" />
-  <text x="534.0" y="864.9" class="site-label" >London Westminster</text>
   <circle cx="517.0" cy="862.9" r="3" fill="white" id="HRL" class="site-mark" />
-  <text x="517.0" y="862.9" class="site-label" >London Harlington</text>
   <circle cx="530.6" cy="859.9" r="3" fill="white" id="MY1" class="site-mark" />
-  <text x="530.6" y="859.9" class="site-label" >London Marylebone Road</text>
   <circle cx="525.2" cy="860.9" r="3" fill="white" id="KC1" class="site-mark" />
-  <text x="525.2" y="860.9" class="site-label" >London N. Kensington</text>
   <circle cx="333.8" cy="896.2" r="3" fill="white" id="BPLE" class="site-mark" />
-  <text x="333.8" y="896.2" class="site-label" >Barnstaple A39</text>
   <circle cx="409.8" cy="878.2" r="3" fill="white" id="BATH" class="site-mark" />
-  <text x="409.8" y="878.2" class="site-label" >Bath Roadside</text>
   <circle cx="401.8" cy="872.2" r="3" fill="white" id="BR11" class="site-mark" />
-  <text x="401.8" y="872.2" class="site-label" >Bristol Temple Way</text>
   <circle cx="400.8" cy="870.2" r="3" fill="white" id="BRS8" class="site-mark" />
-  <text x="400.8" y="870.2" class="site-label" >Bristol St Pauls</text>
   <circle cx="395.8" cy="903.2" r="3" fill="white" id="MACK" class="site-mark" />
-  <text x="395.8" y="903.2" class="site-label" >Charlton Mackrell</text>
   <circle cx="357.1" cy="923.2" r="3" fill="white" id="EX" class="site-mark" />
-  <text x="357.1" y="923.2" class="site-label" >Exeter Roadside</text>
   <circle cx="324.1" cy="947.2" r="3" fill="white" id="PLYM" class="site-mark" />
-  <text x="324.1" y="947.2" class="site-label" >Plymouth Centre</text>
   <circle cx="325.1" cy="944.2" r="3" fill="white" id="PLYR" class="site-mark" />
-  <text x="325.1" y="944.2" class="site-label" >Plymouth Tavistock Road</text>
   <circle cx="346.1" cy="932.2" r="3" fill="white" id="YW" class="site-mark" />
-  <text x="346.1" y="932.2" class="site-label" >Yarner Wood</text>
+
+  <text x="196.17" y="618.2" class="site-label" id="ARM6_label">Armagh Roadside</text>
+  <text x="232.17" y="596.58" class="site-label" id="BEL2_label">Belfast Centre</text>
+  <text x="230.17" y="597.58" class="site-label" id="BEL1_label">Belfast Stockmans Lane</text>
+  <text x="136.17" y="610.2" class="site-label" id="LNVR_label">Lough Navar</text>
+  <text x="162.2" y="564.9" class="site-label" id="DERR_label">Derry Rosemount</text>
+  <text x="430.53" y="366.2" class="site-label" id="ABD_label">Aberdeen</text>
+  <text x="429.93" y="366.1" class="site-label" id="ABD7_label">Aberdeen Union Street Roadside</text>
+  <text x="429.13" y="367.4" class="site-label" id="ABD8_label">Aberdeen Wellington Road</text>
+  <text x="319.13" y="337.4" class="site-label" id="INV2_label">Inverness</text>
+  <text x="279.13" y="389.4" class="site-label" id="FW_label">Fort William</text>
+  <text x="318.9" y="482.4" class="site-label" id="GHSR_label">Glasgow High Street</text>
+  <text x="318.0" y="481.4" class="site-label" id="GLKP_label">Glasgow Townhead</text>
+  <text x="366.9" y="481.3" class="site-label" id="ED3_label">Edinburgh St Leonards</text>
+  <text x="366.9" y="481.3" class="site-label" id="ESK_label">Eskdalemuir</text>
+  <text x="362.9" y="492.3" class="site-label" id="ACTH_label">Auchencorth Moss</text>
+  <text x="364.1" y="503.3" class="site-label" id="PEEB_label">Peebles</text>
+  <text x="347.5" y="474.0" class="site-label" id="GRAN_label">Grangemouth</text>
+  <text x="348.0" y="474.4" class="site-label" id="GRA2_label">Grangemouth Moray</text>
+  <text x="472.53" y="56.2" class="site-label" id="LERW_label">Lerwick</text>
+  <text x="373.8" y="780.2" class="site-label" id="AH_label">Aston Hill</text>
+  <text x="372.53" y="866.2" class="site-label" id="CARD_label">Cardiff Centre</text>
+  <text x="391.8" y="850.2" class="site-label" id="CHP_label">Chepstow A48</text>
+  <text x="382.53" y="842.2" class="site-label" id="CWMB_label">Cwmbran</text>
+  <text x="381.8" y="856.2" class="site-label" id="NPT3_label">Newport</text>
+  <text x="296.3" y="836.2" class="site-label" id="PEMB_label">Narberth</text>
+  <text x="348.53" y="856.2" class="site-label" id="PT4_label">Port Talbot Margam</text>
+  <text x="331.8" y="853.2" class="site-label" id="SWA1_label">Swansea Roadside</text>
+  <text x="377.3" y="732.2" class="site-label" id="WREX_label">Wrexham</text>
+  <text x="385.53" y="698.2" class="site-label" id="BBRD_label">Birkenhead Borough Road</text>
+  <text x="386.5" y="668.2" class="site-label" id="BLC2_label">Blackpool Marton:</text>
+  <text x="415.5" y="688.2" class="site-label" id="BURW_label">Bury Whitefield Roadside</text>
+  <text x="397.3" y="568.2" class="site-label" id="CAR_label">Carlisle Roadside</text>
+  <text x="418.6" y="701.2" class="site-label" id="GLAZ_label">Glazebury</text>
+  <text x="389.9" y="703.9" class="site-label" id="LVP_label">Liverpool Speke</text>
+  <text x="430.5" y="699.2" class="site-label" id="MAN3_label">Manchester Piccadilly</text>
+  <text x="430.5" y="705.2" class="site-label" id="MAHG_label">Manchester Sharston</text>
+  <text x="405.5" y="676.2" class="site-label" id="PRES_label">Preston</text>
+  <text x="426.1" y="699.2" class="site-label" id="ECCL_label">Salford Eccles</text>
+  <text x="435.5" y="695.2" class="site-label" id="CW_label">Shaw Crompton Way</text>
+  <text x="397.5" y="692.2" class="site-label" id="SHLW_label">St Helens Linkway</text>
+  <text x="404.5" y="698.2" class="site-label" id="WAR_label">Warrington</text>
+  <text x="397.5" y="699.2" class="site-label" id="WSMR_label">Widnes Milton Road</text>
+  <text x="407.5" y="689.2" class="site-label" id="WIG5_label">Wigan Centre</text>
+  <text x="386.5" y="668.2" class="site-label" id="BLC2_label">Blackpool Marton</text>
+  <text x="450.3" y="565.2" class="site-label" id="NEWC_label">Newcastle Centre</text>
+  <text x="463.6" y="577.2" class="site-label" id="SUN2_label">Sunderland Silksworth</text>
+  <text x="463.3" y="574.5" class="site-label" id="SUNR_label">Sunderland Wessington Way</text>
+  <text x="471.6" y="599.2" class="site-label" id="MID_label">Middlesbrough</text>
+  <text x="460.6" y="606.2" class="site-label" id="EAGL_label">Stockton-on-Tees Eaglescliffe</text>
+  <text x="497.6" y="633.2" class="site-label" id="HM_label">High Muffles</text>
+  <text x="465.6" y="652.2" class="site-label" id="YK10_label">York Bootham</text>
+  <text x="467.6" y="654.2" class="site-label" id="YK11_label">York Fishergate</text>
+  <text x="519.8" y="671.6" class="site-label" id="HUL2_label">Hull Freetown</text>
+  <text x="518.2" y="672.2" class="site-label" id="HULR_label">Hull Holderness Road</text>
+  <text x="447.9" y="664.2" class="site-label" id="LEED_label">Leeds Centre</text>
+  <text x="449.9" y="665.2" class="site-label" id="LED6_label">Leeds Headingley Kerbside</text>
+  <text x="440.9" y="670.6" class="site-label" id="BDMA_label">Bradford Mayo Avenue</text>
+  <text x="449.9" y="696.6" class="site-label" id="BAR3_label">Barnsley Gawber</text>
+  <text x="464.9" y="700.6" class="site-label" id="DCST_label">Doncaster A630 Cleveland Street</text>
+  <text x="487.4" y="692.6" class="site-label" id="SCN2_label">Scunthorpe Town</text>
+  <text x="454.9" y="704.6" class="site-label" id="SHBR_label">Sheffield Barnsley Road</text>
+  <text x="453.2" y="706.9" class="site-label" id="SHDG_label">Sheffield Devonshire Green</text>
+  <text x="455.7" y="705.6" class="site-label" id="SHE_label">Sheffield Tinsley</text>
+  <text x="450.9" y="754.6" class="site-label" id="BRTN_label">Burton-on-Trent Horninglow</text>
+  <text x="456.1" y="720.0" class="site-label" id="CHLG_label">Chesterfield Loundsley Green</text>
+  <text x="456.9" y="721.6" class="site-label" id="CHS7_label">Chesterfield Roadside</text>
+  <text x="456.9" y="741.6" class="site-label" id="DESA_label">Derby St Alkmunds Way</text>
+  <text x="441.7" y="705.1" class="site-label" id="LB_label">Ladybower</text>
+  <text x="466.9" y="767.1" class="site-label" id="LEIR_label">Leicester A594 Roadside</text>
+  <text x="467.9" y="768.8" class="site-label" id="LECU_label">Leicester University</text>
+  <text x="466.9" y="739.6" class="site-label" id="NOTT_label">Nottingham Centre</text>
+  <text x="465.9" y="740.6" class="site-label" id="NWBV_label">Nottingham Western Boulevard</text>
+  <text x="437.2" y="780.6" class="site-label" id="BIRR_label">Birmingham A4540 Roadside</text>
+  <text x="435.9" y="779.8" class="site-label" id="AGRN_label">Birmingham Acocks Green</text>
+  <text x="430.9" y="765.8" class="site-label" id="CANK_label">Cannock A5190 Roadside</text>
+  <text x="431.9" y="774.1" class="site-label" id="WAL4_label">Walsall Woodlands</text>
+  <text x="452.2" y="786.6" class="site-label" id="COAL_label">Coventry Allesley</text>
+  <text x="454.9" y="786.9" class="site-label" id="COBR_label">Coventry Binley Road</text>
+  <text x="453.2" y="799.6" class="site-label" id="LEAM_label">Leamington Spa</text>
+  <text x="453.9" y="798.6" class="site-label" id="LEAR_label">Leamington Spa Rugby Road</text>
+  <text x="397.3" y="803.6" class="site-label" id="LEOM_label">Leominster</text>
+  <text x="434.2" y="780.2" class="site-label" id="BOLD_label">Oldbury Birmingham Road</text>
+  <text x="429.9" y="737.1" class="site-label" id="STKR_label">Stoke-on-Trent A50 Roadside</text>
+  <text x="432.9" y="737.9" class="site-label" id="STOK_label">Stoke-on-Trent Centre</text>
+  <text x="410.9" y="767.8" class="site-label" id="TELF_label">Telford Hollinswood</text>
+  <text x="540.3" y="806.2" class="site-label" id="CAM_label">Cambridge Roadside</text>
+  <text x="509.3" y="835.2" class="site-label" id="LUTR_label">Luton A505 Roadside</text>
+  <text x="599.3" y="775.2" class="site-label" id="NO12_label">Norwich Lakenfields</text>
+  <text x="520.3" y="811.7" class="site-label" id="SDY_label">Sandy Roadside</text>
+  <text x="610.3" y="802.2" class="site-label" id="SIB_label">Sibton</text>
+  <text x="573.3" y="857.5" class="site-label" id="SEND_label">Southend-on-Sea</text>
+  <text x="592.3" y="836.2" class="site-label" id="OSY_label">St Osyth</text>
+  <text x="562.8" y="858.5" class="site-label" id="HOPE_label">Stanford-le-Hope Roadside</text>
+  <text x="554.8" y="861.5" class="site-label" id="THUR_label">Thurrock</text>
+  <text x="550.3" y="796.2" class="site-label" id="WFEN_label">Wicken Fen</text>
+  <text x="439.8" y="925.0" class="site-label" id="BORN_label">Bournemouth</text>
+  <text x="530.8" y="917.0" class="site-label" id="BRT3_label">Brighton Preston Park</text>
+  <text x="596.9" y="884.2" class="site-label" id="CANT_label">Canterbury</text>
+  <text x="566.3" y="867.5" class="site-label" id="CHAT_label">Chatham Roadside</text>
+  <text x="465.5" y="885.8" class="site-label" id="CHBO_label">Chilbolton Observatory</text>
+  <text x="445.8" y="925.0" class="site-label" id="CHBR_label">Christchurch Barrack Road</text>
+  <text x="552.8" y="917.5" class="site-label" id="EB_label">Eastbourne</text>
+  <text x="533.9" y="892.2" class="site-label" id="HORE_label">Horley</text>
+  <text x="547.8" y="918.0" class="site-label" id="LH_label">Lullington Heath</text>
+  <text x="471.3" y="845.0" class="site-label" id="OX_label">Oxford Centre Roadside</text>
+  <text x="471.9" y="846.6" class="site-label" id="OX8_label">Oxford St Ebbes</text>
+  <text x="483.2" y="917.2" class="site-label" id="PMTH_label">Portsmouth</text>
+  <text x="484.6" y="866.6" class="site-label" id="REA5_label">Reading London Road</text>
+  <text x="485.9" y="867.9" class="site-label" id="REA1_label">Reading New Town</text>
+  <text x="560.3" y="871.5" class="site-label" id="ROCH_label">Rochester Stoke</text>
+  <text x="465.5" y="909.8" class="site-label" id="SA33_label">Southampton A33</text>
+  <text x="467.5" y="911.8" class="site-label" id="SOUT_label">Southampton Centre</text>
+  <text x="516.8" y="916.2" class="site-label" id="WTHG_label">Worthing A27 Roadside</text>
+  <text x="530.2" y="856.9" class="site-label" id="CA1_label">Camden Kerbside</text>
+  <text x="546.6" y="861.8" class="site-label" id="BEX_label">London Bexley</text>
+  <text x="535.9" y="859.9" class="site-label" id="CLL2_label">London Bloomsbury</text>
+  <text x="541.0" y="862.0" class="site-label" id="LON6_label">London Eltham</text>
+  <text x="534.0" y="864.9" class="site-label" id="HORS_label">London Westminster</text>
+  <text x="517.0" y="862.9" class="site-label" id="HRL_label">London Harlington</text>
+  <text x="530.6" y="859.9" class="site-label" id="MY1_label">London Marylebone Road</text>
+  <text x="525.2" y="860.9" class="site-label" id="KC1_label">London N. Kensington</text>
+  <text x="333.8" y="896.2" class="site-label" id="BPLE_label">Barnstaple A39</text>
+  <text x="409.8" y="878.2" class="site-label" id="BATH_label">Bath Roadside</text>
+  <text x="401.8" y="872.2" class="site-label" id="BR11_label">Bristol Temple Way</text>
+  <text x="400.8" y="870.2" class="site-label" id="BRS8_label">Bristol St Pauls</text>
+  <text x="395.8" y="903.2" class="site-label" id="MACK_label">Charlton Mackrell</text>
+  <text x="357.1" y="923.2" class="site-label" id="EX_label">Exeter Roadside</text>
+  <text x="324.1" y="947.2" class="site-label" id="PLYM_label">Plymouth Centre</text>
+  <text x="325.1" y="944.2" class="site-label" id="PLYR_label">Plymouth Tavistock Road</text>
+  <text x="346.1" y="932.2" class="site-label" id="YW_label">Yarner Wood</text>
 
 </svg>
