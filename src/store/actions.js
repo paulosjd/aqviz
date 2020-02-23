@@ -9,9 +9,9 @@ export const fetchSites = () => {
     return dispatch => {
         dispatch({ type: FETCH_SITES_BEGIN});
         axios.get(url)
-            .then(sitesData => {
-                dispatch({ type: FETCH_SITES_SUCCESS, payload: { sitesData } });
-                dispatch({ type: FETCH_SITES_SUCCESS, payload: { sitesData } });
+            .then(siteData => {
+                dispatch({ type: FETCH_SITES_SUCCESS, payload: { siteData } });
+                dispatch({ type: FETCH_SITES_SUCCESS, payload: { siteData } });
             })
             .catch((error) => dispatch({ type: FETCH_SITES_FAILURE, payload: { error } }))
     }

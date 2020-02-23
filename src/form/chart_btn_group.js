@@ -10,9 +10,10 @@ export default ({ labels, category }) => {
 
     return (
         <div className='chart_btn_group' >
-            <button className='chart_btn' >Hourly</button>
-            <button  className='chart_btn' >Weekly</button>
-            <button  className='chart_btn' >Monthly</button>
+            <button className='chart_btn' >Day</button>
+            <button  className='chart_btn' >Week</button>
+            <button  className='chart_btn' >Month</button>
+            <button  className='chart_btn' >Year</button>
         </div>
     )
 };

@@ -15,10 +15,12 @@ export default function aqReducer(state = initialState, action) {
         case FETCH_SITE_DATA_BEGIN:
             return { ...state, loading: true };
         case FETCH_SITE_DATA_SUCCESS:
-            const siteData = action.payload.siteData.data;
-            console.log(siteData);
+            const resp = action.payload.siteData.data;
+            console.log(resp.aq_data);
+            const siteData = { ...state.siteData, [resp.site_id]:  resp.aq_data}
+            console.log(siteData)
             // siteData[] -- need site_id in resp - so can assign as site_aq_data and use for .map etc.
-            return { ...state, loading: false };
+            return { ...state, loading: false, siteData };
         case FETCH_SITE_DATA_FAILURE:
             return { ...state, loading: false };
         default:

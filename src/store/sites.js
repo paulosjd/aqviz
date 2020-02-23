@@ -21,15 +21,15 @@ export default function sitesReducer(state = initialState, action) {
         case FETCH_SITES_BEGIN:
             return { ...state, loading: true, error: null };
         case FETCH_SITES_SUCCESS:
-            const sitesData = action.payload.sitesData.data;
-            console.log(sitesData);
+            const siteData = action.payload.siteData.data;
+            console.log(siteData);
             return {
                 ...state,
                 loading: false,
                 loadError: false,
-                regions: [...new Set(sitesData.map(a => a.region))],
-                environs: [...new Set(sitesData.map(a => a.environ))],
-                sites: sitesData
+                regions: [...new Set(siteData.map(a => a.region))],
+                environs: [...new Set(siteData.map(a => a.environ))],
+                sites: siteData
             };
         case FETCH_SITES_FAILURE:
             console.log(action.payload.error);

@@ -14,6 +14,12 @@ class MainContainer extends Component {
         this.props.fetchSites();
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.selectedSiteId !== prevProps.selectedSiteId) {
+            this.props.fetchSiteData(this.props.selectedSiteId);
+        }
+    }
+
     getFilteredSites = () =>{
         let sites = [...this.props.sites];
         const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
@@ -35,6 +41,10 @@ class MainContainer extends Component {
     };
 
     render() {
+        const chartData = {"2017-05-14 00:00": 2, "2017-05-14 01:00": 5, "2017-05-14 02:00": 7,
+            "2017-05-14 03:00": 3, "2017-05-14 04:00": 5, "2017-05-14 05:00": 4,};
+        console.log('this.props.chartData')
+        console.log(this.props.chartData)
         console.log(this.props.selectedSiteId)
         const filteredSites = this.getFilteredSites();
         return (
@@ -61,7 +71,9 @@ class MainContainer extends Component {
                             ignoreClasses={['row_site_name', 'site-mark']}
                             action={() => this.props.resetSelectedSiteId()}
                         >
-                            <TimeSeriesChart/>
+                            <TimeSeriesChart
+                                chartData={this.props.chartData}
+                            />
                         </OutsideAction> : null }
                     <SiteTable filteredSites={filteredSites} />
                 </Col>
@@ -72,12 +84,21 @@ class MainContainer extends Component {
 
 const mapStateToProps = ({ sites, aqData }) => {
 
+    const chartData = {};
+    const selectedSiteData = aqData.siteData[sites.selectedSiteId];
+    if (selectedSiteData) {
+        selectedSiteData.forEach((obj) => {
+            chartData[obj.time] = obj[aqData.pollutant]
+        })
+    }
+
     return {
         sites: sites.sites,
         regions: sites.regions,
         selectedRegions: sites.selectedRegions,
         selectedEnvirons: sites.selectedEnvirons,
         selectedSiteId: sites.selectedSiteId,
+        chartData: chartData,
         textSearch: sites.textSearch,
         environs: sites.environs,
         pollutant: aqData.pollutant,
