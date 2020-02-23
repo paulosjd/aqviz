@@ -1,6 +1,6 @@
 import {
     FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK, TEXT_SEARCH_CHANGE,
-    SITE_HIGHLIGHT,
+    SITE_HIGHLIGHT, REFRESH_SELECTION, SITE_SELECT
 } from './constants'
 
 const initialState = {
@@ -9,6 +9,7 @@ const initialState = {
     selectedRegions: [],
     environs: [],
     selectedEnvirons: [],
+    selectedSiteId: '',
     hoverSiteCode: '',
     textSearch: '',
     loading: false,
@@ -41,16 +42,20 @@ export default function sitesReducer(state = initialState, action) {
                 environList.push(action.value)
             }
             return { ...state, selectedEnvirons: environList };
+        case REFRESH_SELECTION:
+            return { ...state, selectedEnvirons: [] };
         case REGION_CLICK:
             let regionList = [...state.selectedRegions];
             if (regionList.includes(action.value)){
-                regionList = !action.only_add ? regionList.filter(x => x !== action.value) : regionList
+                regionList = regionList.filter(x => x !== action.value)
             } else {
                 regionList.push(action.value)
             }
             return { ...state, selectedRegions: regionList };
         case SITE_HIGHLIGHT:
             return { ...state, hoverSiteCode: action.value };
+        case SITE_SELECT:
+            return { ...state, selectedSiteId: action.value };
         case TEXT_SEARCH_CHANGE:
             return { ...state, textSearch: action.value };
         default:

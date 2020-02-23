@@ -1,10 +1,6 @@
 import axios from "axios";
-import {
-    FETCH_SITES_BEGIN,
-    FETCH_SITES_SUCCESS,
-    FETCH_SITES_FAILURE,
-    TEXT_SEARCH_CHANGE,
-    REGION_CLICK,
+import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, TEXT_SEARCH_CHANGE, REGION_CLICK, SITE_SELECT,
+
 } from './constants'
 
 export const fetchSites = () => {
@@ -20,9 +16,13 @@ export const fetchSites = () => {
 };
 
 export const setTextInput = (val) => {
-    return { type: TEXT_SEARCH_CHANGE, value: val}
+    return { type: TEXT_SEARCH_CHANGE, value: val }
 };
 
-export const regionClick = (val, only_add) => {
-    return { type: REGION_CLICK, value: val, only_add: only_add}
+export const regionClick = (val) => {
+    return { type: REGION_CLICK, value: val }
+};
+
+export const resetSelectedSiteId = () => {
+    return { type: SITE_SELECT, value: '' }
 };

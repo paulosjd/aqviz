@@ -52,7 +52,7 @@ path {
 }
 
 path:hover {
-  fill: #83816f;
+  fill: #c2bfa4;
 }
 
 .list-group-item {
@@ -80,7 +80,7 @@ path:hover {
 }
 
 .btn_line{
-  margin-left: 22px;
+  margin-left: 16px;
   display: inline-block;
 }
 
@@ -119,6 +119,18 @@ path:hover {
   font-size: 14px;
 }
 
+.site_name_cell {
+}
+
+.site_name_cell span{
+  color: #000078;
+  cursor: pointer;
+}
+
+.site_name_cell span:hover{
+  font-weight: bold;
+}
+
 .value_cell {
   width: 28%;
 }
@@ -133,4 +145,14 @@ text.site-label {
 
 .highlight_row {
   background-color: #c3eaff;
+}
+
+.refresh_symbol {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.chartjs-render-monitor {
+  margin-top: 2px;
+  margin-left: 22px;
 }

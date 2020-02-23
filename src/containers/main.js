@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Spinner } from 'reactstrap';
-import { fetchSites, regionClick } from '../store/actions';
+import { fetchSites, regionClick, resetSelectedSiteId } from '../store/actions';
 import SiteTable from '../display/site_table';
 import RegionsMap from '../display/regions_map'
 import FilterItems from './filter_items';
+import TimeSeriesChart from '../display/line_chart'
+import OutsideAction from '../utils/outside_action'
 
 class MainContainer extends Component {
 
@@ -33,8 +35,8 @@ class MainContainer extends Component {
     };
 
     render() {
+        console.log(this.props.selectedSiteId)
         const filteredSites = this.getFilteredSites();
-        console.log(this.props.sites)
         return (
             <Row>
                 <Col md={4}>
@@ -49,13 +51,19 @@ class MainContainer extends Component {
                     </div>
                 </Col>
                 <Col md={8}>
-                    <div className='page-title'>UK Air Quality Data</div>
                     { this.props.isLoading ? <Spinner color="secondary sum-spin"/> :
                         <FilterItems
                             regions={this.props.regions}
                             environs={this.props.environs}
                         /> }
-                    <SiteTable filteredSites={filteredSites}/>
+                    { this.props.selectedSiteId ?
+                        <OutsideAction
+                            ignoreClasses={['row_site_name', 'site-mark']}
+                            action={() => this.props.resetSelectedSiteId()}
+                        >
+                            <TimeSeriesChart/>
+                        </OutsideAction> : null }
+                    <SiteTable filteredSites={filteredSites} />
                 </Col>
             </Row>
         );
@@ -69,6 +77,7 @@ const mapStateToProps = ({ sites, aqData }) => {
         regions: sites.regions,
         selectedRegions: sites.selectedRegions,
         selectedEnvirons: sites.selectedEnvirons,
+        selectedSiteId: sites.selectedSiteId,
         textSearch: sites.textSearch,
         environs: sites.environs,
         pollutant: aqData.pollutant,
@@ -80,7 +89,8 @@ const mapStateToProps = ({ sites, aqData }) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchSites: () => dispatch(fetchSites()),
-        regionClick: (val, arg) => dispatch(regionClick(val, arg))
+        regionClick: (val, arg) => dispatch(regionClick(val, arg)),
+        resetSelectedSiteId: () => dispatch(resetSelectedSiteId()),
     };
 };
 
