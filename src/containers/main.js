@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Spinner } from 'reactstrap';
-import { fetchSites, regionClick, resetSelectedSiteId } from '../store/actions';
+import { fetchSites, regionClick, resetSelectedSiteId, fetchSiteData } from '../store/actions';
 import SiteTable from '../display/site_table';
 import RegionsMap from '../display/regions_map'
 import FilterItems from './filter_items';
@@ -91,6 +91,7 @@ const mapDispatchToProps = dispatch => {
         fetchSites: () => dispatch(fetchSites()),
         regionClick: (val, arg) => dispatch(regionClick(val, arg)),
         resetSelectedSiteId: () => dispatch(resetSelectedSiteId()),
+        fetchSiteData: (val) => dispatch(fetchSiteData(val))
     };
 };
 
