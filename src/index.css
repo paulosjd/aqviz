@@ -190,4 +190,11 @@ text.site-label {
 
 .chart_title {
   margin-left: 50px;
+  font-size: 0.84rem;
+
+}
+
+h4 {
+  margin-top: 10px;
+  font-weight: 400 !important;
 }

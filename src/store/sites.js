@@ -22,7 +22,6 @@ export default function sitesReducer(state = initialState, action) {
             return { ...state, loading: true, error: null };
         case FETCH_SITES_SUCCESS:
             const siteData = action.payload.siteData.data;
-            console.log(siteData);
             return {
                 ...state,
                 loading: false,
@@ -46,7 +45,6 @@ export default function sitesReducer(state = initialState, action) {
             return { ...state, selectedEnvirons: [] };
         case REGION_CLICK:
             let regionList = [...state.selectedRegions];
-            console.log(regionList)
             if (regionList.includes(action.value)) {
                 regionList = regionList.filter(x => x !== action.value)
             } else {

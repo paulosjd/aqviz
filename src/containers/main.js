@@ -15,7 +15,7 @@ class MainContainer extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.selectedSiteId !== prevProps.selectedSiteId) {
+        if (this.props.selectedSiteId && this.props.selectedSiteId !== prevProps.selectedSiteId) {
             if (!this.props.siteData.hasOwnProperty(this.props.selectedSiteId)) {
                 this.props.fetchSiteData(this.props.selectedSiteId);
             }
@@ -43,10 +43,6 @@ class MainContainer extends Component {
     };
 
     render() {
-
-        console.log('this.props.chartData')
-        console.log(this.props.chartData)
-        console.log(this.props.selectedSiteId)
         const filteredSites = this.getFilteredSites();
         let siteName = '';
         const siteInd = filteredSites.findIndex(x => x.id === this.props.selectedSiteId);
@@ -81,6 +77,7 @@ class MainContainer extends Component {
                                 chartData={this.props.chartData}
                                 timeSpan={this.props.chartTimeSpan}
                                 siteName={siteName}
+                                isLoading={this.props.chartDataIsLoading}
                             />
                         </OutsideAction> : null }
                     <SiteTable filteredSites={filteredSites} />
@@ -99,11 +96,9 @@ const mapStateToProps = ({ sites, aqData }) => {
             chartData[obj.time] = obj[aqData.pollutant]
         })
     }
-
     return {
-
         siteData: aqData.siteData,
-
+        chartDataIsLoading: aqData.loading,
         sites: sites.sites,
         regions: sites.regions,
         selectedRegions: sites.selectedRegions,

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, TEXT_SEARCH_CHANGE, REGION_CLICK, SITE_SELECT,
-    FETCH_SITE_DATA_BEGIN, FETCH_SITE_DATA_SUCCESS, FETCH_SITE_DATA_FAILURE, SITE_HIGHLIGHT
+    FETCH_SITE_DATA_BEGIN, FETCH_SITE_DATA_SUCCESS, FETCH_SITE_DATA_FAILURE
 
 } from './constants'
 
 export const fetchSites = () => {
     let url = 'http://127.0.0.1:6543/sites';
     return dispatch => {
-        dispatch({ type: FETCH_SITES_BEGIN});
+        dispatch({ type: FETCH_SITES_BEGIN });
         axios.get(url)
             .then(siteData => {
                 dispatch({ type: FETCH_SITES_SUCCESS, payload: { siteData } });
@@ -20,7 +20,7 @@ export const fetchSites = () => {
 export const fetchSiteData = (site_id) => {
     let url = `http://127.0.0.1:6543/data/${site_id}`;
     return dispatch => {
-        dispatch({ type: FETCH_SITE_DATA_BEGIN});
+        dispatch({ type: FETCH_SITE_DATA_BEGIN });
         axios.get(url)
             .then(siteData => {
                 dispatch({ type: FETCH_SITE_DATA_SUCCESS, payload: { siteData } });
