@@ -3,7 +3,7 @@ import { POLLUTANT_SELECT, FETCH_SITE_DATA_BEGIN, FETCH_SITE_DATA_SUCCESS, FETCH
 
 const initialState = {
     pollutant: 'pm10',
-    chartTimeSpan: 'day',
+    chartTimeSpan: 'month',
     loading: false,
     siteData: {}
 };

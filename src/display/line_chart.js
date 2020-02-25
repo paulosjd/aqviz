@@ -1,8 +1,8 @@
 import React from 'react';
 import { LineChart } from 'react-chartkick'
+import { Spinner } from "reactstrap";
 import ChartButtonGroup from '../form/chart_btn_group'
 import 'chart.js'
-import {Spinner} from "reactstrap";
 
 const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
 
@@ -24,16 +24,22 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
             days = 7;
     }
 
+    const filteredData = {};
     const dt = new Date();
     dt.setDate(dt.getDate() - days);
-    console.log(dt)
+    Object.entries(chartData).forEach(item => {
+        const itemDt = new Date(item[0]);
+        if (itemDt > dt) {
+            filteredData[itemDt] = item[1]
+        }
+    });
 
     const chartContent = (
         <div className='site_chart'>
             <LineChart
                 colors={["#6f98bb", "#666"]}
-                height={200} width={660}
-                data={chartData}
+                height={200} width={650}
+                data={filteredData}
             />
             <ChartButtonGroup
                 timeSpan={timeSpan}
@@ -50,4 +56,3 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
 };
 
 export default TimeSeriesChart;
-

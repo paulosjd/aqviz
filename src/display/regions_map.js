@@ -18,7 +18,7 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
 
 
 
-    function getSiteFromSiteCode(site_code, pollVal=false) {
+    function getSiteFromSiteCode(site_code) {
         const ind = filteredSites.findIndex(x => x.site_code === site_code);
         if (ind > -1)
             return filteredSites[ind]
@@ -52,7 +52,7 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
                         child.onclick = () => {
                             const site = getSiteFromSiteCode(child.id);
                             if (!site[pollutant]) return;
-                            dispatch({type: SITE_SELECT, value: site.id})
+                            dispatch({ type: SITE_SELECT, value: site.id })
                         }
                     }
                 }
