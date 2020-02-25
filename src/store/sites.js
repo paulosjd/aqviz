@@ -46,7 +46,8 @@ export default function sitesReducer(state = initialState, action) {
             return { ...state, selectedEnvirons: [] };
         case REGION_CLICK:
             let regionList = [...state.selectedRegions];
-            if (regionList.includes(action.value)){
+            console.log(regionList)
+            if (regionList.includes(action.value)) {
                 regionList = regionList.filter(x => x !== action.value)
             } else {
                 regionList.push(action.value)

@@ -16,7 +16,9 @@ class MainContainer extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.selectedSiteId !== prevProps.selectedSiteId) {
-            this.props.fetchSiteData(this.props.selectedSiteId);
+            if (!this.props.siteData.hasOwnProperty(this.props.selectedSiteId)) {
+                this.props.fetchSiteData(this.props.selectedSiteId);
+            }
         }
     }
 
@@ -41,12 +43,16 @@ class MainContainer extends Component {
     };
 
     render() {
-        const chartData = {"2017-05-14 00:00": 2, "2017-05-14 01:00": 5, "2017-05-14 02:00": 7,
-            "2017-05-14 03:00": 3, "2017-05-14 04:00": 5, "2017-05-14 05:00": 4,};
+
         console.log('this.props.chartData')
         console.log(this.props.chartData)
         console.log(this.props.selectedSiteId)
         const filteredSites = this.getFilteredSites();
+        let siteName = '';
+        const siteInd = filteredSites.findIndex(x => x.id === this.props.selectedSiteId);
+        if (siteInd > -1) {
+            siteName = filteredSites[siteInd].name
+        }
         return (
             <Row>
                 <Col md={4}>
@@ -68,11 +74,13 @@ class MainContainer extends Component {
                         /> }
                     { this.props.selectedSiteId ?
                         <OutsideAction
-                            ignoreClasses={['row_site_name', 'site-mark']}
+                            ignoreClasses={['row_site_name', 'site-mark', 'pollutant_select']}
                             action={() => this.props.resetSelectedSiteId()}
                         >
                             <TimeSeriesChart
                                 chartData={this.props.chartData}
+                                timeSpan={this.props.chartTimeSpan}
+                                siteName={siteName}
                             />
                         </OutsideAction> : null }
                     <SiteTable filteredSites={filteredSites} />
@@ -93,12 +101,16 @@ const mapStateToProps = ({ sites, aqData }) => {
     }
 
     return {
+
+        siteData: aqData.siteData,
+
         sites: sites.sites,
         regions: sites.regions,
         selectedRegions: sites.selectedRegions,
         selectedEnvirons: sites.selectedEnvirons,
         selectedSiteId: sites.selectedSiteId,
         chartData: chartData,
+        chartTimeSpan: aqData.chartTimeSpan,
         textSearch: sites.textSearch,
         environs: sites.environs,
         pollutant: aqData.pollutant,
@@ -112,7 +124,7 @@ const mapDispatchToProps = dispatch => {
         fetchSites: () => dispatch(fetchSites()),
         regionClick: (val, arg) => dispatch(regionClick(val, arg)),
         resetSelectedSiteId: () => dispatch(resetSelectedSiteId()),
-        fetchSiteData: (val) => dispatch(fetchSiteData(val))
+        fetchSiteData: (val) => dispatch(fetchSiteData(val)),
     };
 };
 

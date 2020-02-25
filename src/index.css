@@ -93,10 +93,16 @@ path:hover {
   outline: none
 }
 
-.chart_btn_group {
-  margin-left: 22px;
-  margin-top: 22px;
+.chart_btn.activeBtn {
+  /*outline: solid;*/
+  border-radius: 3px;
+  border-color: #6f98bb;
 
+}
+
+.chart_btn_group {
+  margin-top: 22px;
+  margin-left: 35px;
 }
 
 .btn_line {
@@ -180,4 +186,8 @@ text.site-label {
 .site_chart {
   display: flex;
   width: 800px;
+}
+
+.chart_title {
+  margin-left: 50px;
 }

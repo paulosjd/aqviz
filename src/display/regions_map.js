@@ -1,18 +1,18 @@
 import React from "react";
 import { ReactSVG } from 'react-svg'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getColorFromSiteCode } from "../utils/color_utils";
-import {SITE_HIGHLIGHT, SITE_SELECT} from "../store/constants";
+import { SITE_HIGHLIGHT, SITE_SELECT } from "../store/constants";
 
 const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, pollutant }) => {
 
     const dispatch = useDispatch();
+    const content = useSelector(state => state);
+    const hoverSiteCode = content.sites.hoverSiteCode;
 
-    function handleHoverEvent(elem, display, svg, siteCode) {
+    function handleHoverEvent(elem, display, siteCode) {
         if (elem.tagName === 'circle') {
             dispatch({type: SITE_HIGHLIGHT, value: display === 'block' ? siteCode : ''});
-            let elem = svg.getElementById(`${siteCode}_label`);
-            elem.setAttribute('style', 'display: ' + display);
         }
     }
 
@@ -36,6 +36,10 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
                 svg.setAttribute("transform", "scale(0.70) translate(-230 -490.5)");
             }}
             afterInjection={(err, svg) => {
+                if (hoverSiteCode) {
+                    let elem = svg.getElementById(`${hoverSiteCode}_label`);
+                    elem.setAttribute('style', 'display: block');
+                }
                 for (let child of svg.children){
                     const title = child.attributes.title;
                     if (title && selectedRegions.includes(title.value)) {
@@ -46,8 +50,8 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
                         child.setAttribute('style',
                             'display: initial; fill: ' + getColorFromSiteCode(child.id, filteredSites, pollutant)
                         );
-                        child.onmouseover = () => {handleHoverEvent(child, 'block', svg, child.id)};
-                        child.onmouseout = () => handleHoverEvent(child, 'hidden', svg, child.id)
+                        child.onmouseover = () => handleHoverEvent(child, 'block', child.id);
+                        child.onmouseout = () => handleHoverEvent(child, 'hidden', child.id);
                         child.onclick = () => dispatch({ type: SITE_SELECT, value: getIdFromSiteCode(child.id) })
                     }
                 }
