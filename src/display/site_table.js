@@ -20,7 +20,6 @@ class SiteTable extends Component {
                         <SiteRow
                             hoverSiteCode={this.props.hoverSiteCode}
                             pollutant={this.props.pollutant}
-                            // onSiteClick={props.onSiteClick}
                             site={site} key={site.id}
                         />
                     );
@@ -30,19 +29,17 @@ class SiteTable extends Component {
         return (
             <Table striped bordered hover>
                 <thead>
-                <tr>
-                    <th className='th-main'>
+                <tr className='oa_ignore'>
+                    <th className='th-main oa_ignore'>
                         <TextSearchInput
                             textInput={this.props.textSearch}
                             handleTextChange={this.props.setTextInput}
                         />
-                        <span className='time'>12/02/2020 07:00</span>
+                        <span className='time oa_ignore'>12/02/2020 07:00</span>
                     </th>
-                    <th id="pm10_header">
+                    <th id="pm10_header oa_ignore">
                         <PollutantSelect
                             pollutant={'pm10'}
-                            // pollutant={props.pollutant}
-                            // handlePollutantChoice={props.handlePollutantChoice}
                         />
                     </th>
                 </tr>

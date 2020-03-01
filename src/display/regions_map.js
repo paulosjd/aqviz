@@ -2,7 +2,7 @@ import React from "react";
 import { ReactSVG } from 'react-svg'
 import { useDispatch } from "react-redux";
 import { getColorFromSiteCode } from "../utils/color_utils";
-import {SITE_HIGHLIGHT, SITE_SELECT} from "../store/constants";
+import { SITE_SELECT } from "../store/constants";
 
 const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, pollutant }) => {
 
@@ -15,8 +15,6 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
             elem.setAttribute('style', 'display: ' + display);
         }
     }
-
-
 
     function getSiteFromSiteCode(site_code) {
         const ind = filteredSites.findIndex(x => x.site_code === site_code);

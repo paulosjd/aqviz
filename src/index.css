@@ -1,5 +1,5 @@
 body {
-  object-position: 0% 0%;
+  object-position: 0 0;
   margin: 10px;
   padding: 10px;
   fill: #b9b9b9;
@@ -9,14 +9,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.container{
-    width: 100%
+
+.container {
+  width: 100%
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.site-mark{
+
+.mgn-tp-12 {
+  margin-top: 12px;
+}
+
+.site-mark {
   display: none;
 }
 
@@ -44,7 +51,7 @@ code {
   height: 500px;
   overflow: hidden;
   margin-top: 26px;
-  background-color: aliceblue;
+  background-color: #cbe3ff;
 }
 
 path {
@@ -53,6 +60,11 @@ path {
 
 path:hover {
   fill: #c2bfa4;
+}
+
+.table_area{
+  display: flex;
+  width: 800px;
 }
 
 .list-group-item {
@@ -190,11 +202,12 @@ text.site-label {
 }
 
 .chart_title {
-  margin-left: 50px;
-  font-size: 1rem;
+  margin-left: 62px;
+  font-size: 12px;
 }
 
-h4 {
-  margin-top: 10px;
-  font-weight: 400 !important;
+.chart_title_right{
+  font-size: 12px;
+  float: right;
+  margin-right: 182px;
 }

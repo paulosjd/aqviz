@@ -8,7 +8,11 @@ const useOutsideAction = (ref, action, ignoreClasses) => {
         ignoreClasses = ignoreClasses || [];
         const targetClsName = typeof event.target.className === 'string' ?
             event.target.className : event.target.className.baseVal || '';
-        if (ignoreClasses.includes(targetClsName) || ignoreClasses.includes(targetClsName.split(' ')[0])) {
+
+        if (ignoreClasses.includes(targetClsName) ||
+            ignoreClasses.includes(targetClsName.split(' ')[0]) ||
+            ignoreClasses.includes(targetClsName.split(' ')[1])
+        ) {
             return
         }
         if (ref.current && !ref.current.contains(event.target)) {

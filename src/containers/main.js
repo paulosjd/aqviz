@@ -7,6 +7,7 @@ import RegionsMap from '../display/regions_map'
 import FilterItems from './filter_items';
 import TimeSeriesChart from '../display/line_chart'
 import OutsideAction from '../utils/outside_action'
+import ChartButtonGroup from '../form/chart_btn_group'
 
 class MainContainer extends Component {
 
@@ -25,7 +26,7 @@ class MainContainer extends Component {
     getFilteredSites = () =>{
         let sites = [...this.props.sites];
         const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
-        if (envEmpty && regEmpty && this.props.textSearch.length < 1){
+        if (envEmpty && regEmpty && this.props.textSearch.length < 1 && !this.props.selectedSiteId){
             return []
         }
         if (this.props.highFilter) {
@@ -34,20 +35,25 @@ class MainContainer extends Component {
                 sites = sites.slice(0,10)
             } else {sites = sites.slice(-10).reverse()}
         }
-        return sites.filter((site) => {
+        const filteredSites = sites.filter((site) => {
             return (
                 site.name.toLowerCase().indexOf(this.props.textSearch.toLowerCase()) > -1 &&
                 (envEmpty || this.props.selectedEnvirons.includes(site.environ)) &&
                 (regEmpty || this.props.selectedRegions.includes(site.region)))
         });
+        if (this.props.selectedSiteId && filteredSites.length === 0) {
+            const siteInd = sites.findIndex(x => x.id === this.props.selectedSiteId);
+            return [sites[siteInd]] || []
+        }
+        return filteredSites
     };
 
     render() {
         const filteredSites = this.getFilteredSites();
-        let siteName = '';
+        let [siteName, siteEnviron] = ['', ''];
         const siteInd = filteredSites.findIndex(x => x.id === this.props.selectedSiteId);
         if (siteInd > -1) {
-            siteName = filteredSites[siteInd].name
+            [siteName, siteEnviron] = [filteredSites[siteInd].name, filteredSites[siteInd].environ]
         }
         return (
             <Row>
@@ -70,17 +76,23 @@ class MainContainer extends Component {
                         /> }
                     { this.props.selectedSiteId ?
                         <OutsideAction
-                            ignoreClasses={['row_site_name', 'site-mark', 'pollutant_select']}
+                            ignoreClasses={['oa_ignore', 'site-mark', 'pollutant_select']}
                             action={() => this.props.resetSelectedSiteId()}
                         >
                             <TimeSeriesChart
                                 chartData={this.props.chartData}
                                 timeSpan={this.props.chartTimeSpan}
                                 siteName={siteName}
+                                siteEnviron={siteEnviron}
                                 isLoading={this.props.chartDataIsLoading}
                             />
                         </OutsideAction> : null }
-                    <SiteTable filteredSites={filteredSites} />
+                    <div className='table_area'>
+                        <SiteTable filteredSites={filteredSites} />
+                        <ChartButtonGroup
+                            timeSpan={this.props.chartTimeSpan}
+                        />
+                    </div>
                 </Col>
             </Row>
         );

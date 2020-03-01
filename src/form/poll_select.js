@@ -9,19 +9,26 @@ export default () => {
     const content = useSelector(state => state);
     const pollutant = content.aqData.pollutant;
 
+
     return (
         <ButtonDropdown
             isOpen={dropdownOpen}
             toggle={() => setDropdownOpen(!dropdownOpen)}
         >
-            <DropdownToggle className='pollutant_select' caret>
+            <DropdownToggle className='pollutant_select oa_ignore' caret>
                 {pollutant === 'ozone' ? 'Ozone' : pollutant === 'no2' ? 'NO₂' : pollutant.toUpperCase()}
             </DropdownToggle>
             <DropdownMenu>
-                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'pm10'})}>PM10</DropdownItem>
-                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'pm25'})}>PM25</DropdownItem>
-                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'no2'})}>NO₂</DropdownItem>
-                <DropdownItem onClick={() => dispatch({type: POLLUTANT_SELECT, value: 'ozone'})}>Ozone</DropdownItem>
+                {[['pm10', 'PM10'], ['pm25', 'PM25'], ['no2', 'NO₂'], ['ozone', 'Ozone']].map(i => {
+                    return (
+                        <DropdownItem
+                            key={i[0]}
+                            className='oa_ignore'
+                            onClick={() => dispatch({type: POLLUTANT_SELECT, value: i[0]})}
+                        >{i[1]}
+                        </DropdownItem>
+                    )
+                })}
             </DropdownMenu>
         </ButtonDropdown>
     )

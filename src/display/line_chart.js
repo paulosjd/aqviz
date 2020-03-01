@@ -4,7 +4,7 @@ import { Spinner } from "reactstrap";
 import ChartButtonGroup from '../form/chart_btn_group'
 import 'chart.js'
 
-const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
+const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading }) => {
 
     let days;
     switch (timeSpan) {
@@ -40,6 +40,7 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
                 colors={["#6f98bb", "#666"]}
                 height={200} width={650}
                 data={filteredData}
+                points={days === 1}
             />
             <ChartButtonGroup
                 timeSpan={timeSpan}
@@ -48,10 +49,11 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, isLoading }) => {
     );
 
     return (
-        <React.Fragment>
-            <h4 className='chart_title'>{siteName}</h4>
-            { isLoading ? <Spinner color="secondary sum-spin"/> : chartContent }
-        </React.Fragment>
+            <div className='mgn-tp-12'>
+                <span className='chart_title'>{siteName}</span>
+                <span className='chart_title_right'>{siteEnviron}</span>
+                { isLoading ? <Spinner color="secondary sum-spin"/> : chartContent }
+            </div>
     )
 };
 

@@ -11,16 +11,16 @@ const SiteRow = ({site, pollutant, hoverSiteCode}) => {
         colorStyle = {backgroundColor: getColorForPollutantAndValue(pollutant, site[pollutant])}
     }
     return (
-        <tr >
-            <td className='site_name_cell'>
+        <tr className='oa_ignore'>
+            <td className='site_name_cell oa_ignore'>
                 <span
                     onClick={() => dispatch({ type: SITE_SELECT, value: site.id })}
-                    className='row_site_name'
+                    className='oa_ignore'
                 >
                     {site.name}
                 </span>
             </td>
-            <td className='value_cell' style={colorStyle}>
+            <td className='value_cell oa_ignore' style={colorStyle}>
                 {site[pollutant]}
             </td>
         </tr>

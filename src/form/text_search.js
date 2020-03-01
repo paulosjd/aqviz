@@ -6,18 +6,11 @@ const TextSearchInput = (props) => {
         props.handleTextChange(e.target.value)
     };
 
-    const handleInputBlur = (e) => {
-        if (!e.relatedTarget || !e.relatedTarget.className.includes('text_filter')) {
-            props.handleTextChange('')
-        }
-    };
-
     return (
         <input name='text_filter' type="text" placeholder="Search"
-               className='text_filter'
+               className='text_filter oa_ignore'
                value={props.textInput}
                onChange={handleTextChange}
-               onBlur={handleInputBlur}
         />
     )
 };
