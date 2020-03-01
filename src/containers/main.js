@@ -62,6 +62,7 @@ class MainContainer extends Component {
                         <RegionsMap
                             regions={this.props.regions}
                             selectedRegions={this.props.selectedRegions}
+                            selectedSiteId={this.props.selectedSiteId}
                             regionClick={this.props.regionClick}
                             filteredSites={filteredSites}
                             pollutant={this.props.pollutant}
@@ -89,9 +90,10 @@ class MainContainer extends Component {
                         </OutsideAction> : null }
                     <div className='table_area'>
                         <SiteTable filteredSites={filteredSites} />
-                        <ChartButtonGroup
-                            timeSpan={this.props.chartTimeSpan}
-                        />
+                        { this.props.selectedSiteId ?
+                            <ChartButtonGroup
+                                timeSpan={this.props.chartTimeSpan}
+                            /> : null }
                     </div>
                 </Col>
             </Row>
