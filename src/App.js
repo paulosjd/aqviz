@@ -1,53 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Navbar } from 'reactstrap';
 import MainContainer from './containers/main';
+import {fetchSiteData, fetchSites, regionClick, resetSelectedSiteId} from "./store/actions";
 
-const initialState = {
-    sites: [],
-    time: '',
-    geoUrl: '',
-};
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-    }
-
-    handleGeoCoordinatesSearch(val) {
-        this.setState(initialState);
-        this.fetchData(val)
-    }
-
-    componentDidMount() {
-        this.fetchData()
-    }
-
-    fetchData (coordinates){
-        const api = 'http://api.air-aware.com/';
-        const default_query = 'sites/latest';
-        let location_url = '';
-        if ( coordinates ) {
-            location_url = 'sites/location-order/'.concat(coordinates);
-    }
-        // fetch(api + (location_url || default_query))
-        //     .then(response => response.json())
-        //     .then(data => {this.setState({
-        //         sites: data.site_data.filter(x => x),
-        //         time: data.time
-        //     })});
-    }
 
     render() {
         return (
         <div className="App">
-            <MainContainer
-                sites={this.state.sites}
-                time={this.state.time}
-                filterText={this.state.filterText}
-            />
+            <Navbar>
+                <span className="nav-item">UK Air Quality Monitoring Network</span>
+                <span className="mr-auto nav-item">{this.props.time}</span>
+                <button
+                    type="button" className=""
+                    onClick={(e) => {console.log(e)
+                    }}
+                >Logout</button>
+            </Navbar>
+            <MainContainer />
         </div>
         )
     }
 }
 
-export default App;
+const mapStateToProps = ({ sites, aqData }) => {
+    return {
+        time: sites.time,
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
