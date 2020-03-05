@@ -26,6 +26,33 @@ body {
   padding: 0.3rem 0.5rem 1.2rem 1.2rem !important
 }
 
+.nav-item {
+  margin-top: 6px;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.btn-info {
+  color: #8a9baa;
+  background-color: #cbe3ff;
+  border-color: #8a9baa;
+  border-width: 1px;
+}
+
+.btn-info:active:focus {
+    box-shadow: none;
+    color: #8a9baa !important;
+    background-color: #cbe3ff !important;
+    border-color: #8a9baa  !important;
+    border-width: 1px !important;
+}
+
+.time {
+  margin-left: 30px;
+  font-weight: lighter;
+
+}
+
 .mgn-tp-12 {
   margin-top: 12px;
 }
@@ -73,7 +100,7 @@ path:hover {
 }
 
 .menu-items-list {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .active-btn  {

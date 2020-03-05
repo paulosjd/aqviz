@@ -54,7 +54,7 @@ const RegionsMap = ({ regions, regionClick, selectedRegions, filteredSites, poll
                         if (child.id === selectedSiteCode) {
                             child.setAttribute('stroke', 'black');
                             child.setAttribute('stroke-width', '2px');
-                            child.setAttribute('r', '4')
+                            child.setAttribute('r', '5')
                         }
                         child.onmouseover = () => handleHoverEvent(child, 'block', svg, child.id);
                         child.onmouseout = () => handleHoverEvent(child, 'hidden', svg, child.id);

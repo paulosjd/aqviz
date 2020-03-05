@@ -8,16 +8,17 @@ import {fetchSiteData, fetchSites, regionClick, resetSelectedSiteId} from "./sto
 class App extends Component {
 
     render() {
+        let time;
+        if (this.props.time) {
+            const dt = new Date(this.props.time);
+            time = dt.toLocaleDateString().concat(' ', dt.toLocaleTimeString().slice(0, 5))
+        }
         return (
         <div className="App">
             <Navbar>
                 <span className="nav-item">UK Air Quality Monitoring Network</span>
-                <span className="mr-auto nav-item">{this.props.time}</span>
-                <button
-                    type="button" className=""
-                    onClick={(e) => {console.log(e)
-                    }}
-                >Logout</button>
+                <span className="mr-auto nav-item time">{time}</span>
+                <a href='https://health.paulja.me' className="btn btn-info">Home</a>
             </Navbar>
             <MainContainer />
         </div>

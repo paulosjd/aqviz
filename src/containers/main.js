@@ -56,7 +56,7 @@ class MainContainer extends Component {
             [siteName, siteEnviron] = [filteredSites[siteInd].name, filteredSites[siteInd].environ]
         }
         return (
-            <Row>
+            <Row className='main_row'>
                 <Col md={4}>
                     <div className='overview-map'>
                         <RegionsMap

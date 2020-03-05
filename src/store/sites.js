@@ -14,6 +14,7 @@ const initialState = {
     textSearch: '',
     loading: false,
     error: null,
+    time: ''
 };
 
 export default function sitesReducer(state = initialState, action) {
@@ -21,14 +22,15 @@ export default function sitesReducer(state = initialState, action) {
         case FETCH_SITES_BEGIN:
             return { ...state, loading: true, error: null };
         case FETCH_SITES_SUCCESS:
-            const siteData = action.payload.siteData.data;
+            const siteData = action.payload.siteData.data.sites_data;
             return {
                 ...state,
                 loading: false,
                 loadError: false,
                 regions: [...new Set(siteData.map(a => a.region))],
                 environs: [...new Set(siteData.map(a => a.environ))],
-                sites: siteData
+                sites: siteData,
+                time: action.payload.siteData.data.time
             };
         case FETCH_SITES_FAILURE:
             console.log(action.payload.error);

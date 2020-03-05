@@ -35,7 +35,6 @@ class SiteTable extends Component {
                             textInput={this.props.textSearch}
                             handleTextChange={this.props.setTextInput}
                         />
-                        <span className='time oa_ignore'>12/02/2020 07:00</span>
                     </th>
                     <th id="pm10_header oa_ignore">
                         <PollutantSelect
