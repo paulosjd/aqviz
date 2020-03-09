@@ -10,6 +10,8 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading
     const content = useSelector(state => state);
     const overlaySiteMode = content.sites.overlaySiteMode;
     const overlaySiteIds = content.sites.overlaySiteIds;
+    const aqData = content.aqData;
+    const showOverlay = overlaySiteMode || overlaySiteIds.length > 0
 
     let days;
     switch (timeSpan) {
@@ -29,6 +31,11 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading
             days = 7;
     }
 
+    console.log('chartDataqDataaqDataaqDataaqData')
+    console.log(aqData)
+
+
+
     const filteredData = {};
     const dt = new Date();
     dt.setDate(dt.getDate() - days);
@@ -38,7 +45,6 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading
             filteredData[itemDt] = item[1]
         }
     });
-    console.log(filteredData)
 
     const filteredData2 = {};
     Object.entries(chartData).forEach(item => {
@@ -60,13 +66,34 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading
         if (itemDt > dt) {
             filteredData4[itemDt] = item[1] + 7
         }
-    });
-    const testData = [
-        {"name":"series 1", "data": filteredData},
-        {"name":"series 2", "data": filteredData2},
-        {"name":"series 3", "data": filteredData3},
-        {"name":"series 4", "data": filteredData4}
-    ];
+    })
+
+
+    let testData = filteredData;
+    if (showOverlay) {
+        testData = [{name: siteName, data: filteredData}];
+        overlaySiteIds.forEach(siteId => {
+            let extraSiteData = {};
+            if (aqData.siteData[siteId]) {
+                aqData.siteData[siteId].forEach(obj => {
+                    console.log(obj)
+                    const itemDt = new Date(obj.time);
+                    if (itemDt > dt) {
+                        extraSiteData[itemDt] = obj[aqData.pollutant]
+                    }
+                    // extraSiteData[itemDt] = obj[aqData.pollutant]
+                })
+            }
+            testData.push({name: getSiteNameFromId(siteId), data: extraSiteData})
+        })
+
+    }
+    console.log(testData)
+    // testData = [{"name": siteName, "data": filteredData},
+    //     {"name": getSiteNameFromId(), "data": filteredData2},
+    //     {"name":"series 3", "data": filteredData3},
+    //     {"name":"series 4", "data": filteredData4}
+    // ];
     // console.log(getSiteNameFromId(overlaySiteIds[0]))
     console.log(overlaySiteIds)
 
@@ -86,7 +113,7 @@ const TimeSeriesChart = ({ chartData, timeSpan, siteName, siteEnviron, isLoading
 
     return (
             <div className='mgn-tp-12'>
-                { (! overlaySiteIds.length > 0 && !overlaySiteMode) &&
+                { !showOverlay &&
                 <React.Fragment>
                     <span className='chart_title'>{siteName}</span>
                     <span className='chart_title_right'>{siteEnviron}</span>

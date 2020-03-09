@@ -4,7 +4,6 @@ import {
     FETCH_SITE_DATA_SUCCESS,
     FETCH_SITE_DATA_FAILURE,
     TIMESPAN_SELECT,
-    FETCH_OVERLAY_SITE_DATA_SUCCESS,
 } from './constants'
 
 const initialState = {
@@ -28,9 +27,6 @@ export default function aqReducer(state = initialState, action) {
             const siteData = { ...state.siteData, [resp.site_id]:  resp.aq_data};
             return { ...state, loading: false, siteData };
         case FETCH_SITE_DATA_FAILURE:
-            return { ...state, loading: false };
-        case FETCH_OVERLAY_SITE_DATA_SUCCESS:
-            const data = action.payload.siteData.data;
             return { ...state, loading: false };
         default:
             return state

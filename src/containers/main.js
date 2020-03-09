@@ -23,10 +23,8 @@ class MainContainer extends Component {
         }
         if (this.props.overlaySiteIds.length > 0 && this.props.overlaySiteIds !== prevProps.overlaySiteIds) {
             this.props.overlaySiteIds.forEach(siteId => {
-                console.log(siteId)
-                if (!this.props.overlaySiteData[siteId] && !this.props.siteData.hasOwnProperty(siteId)) {
-                    console.log('not overlaySD for siteID and not props sitedata props key ' + siteId)
-                    this.props.fetchOverlaySiteData(this.props.selectedSiteId);
+                if (!this.props.siteData.hasOwnProperty(siteId)) {
+                    this.props.fetchSiteData(siteId);
                 }
             })
         }
@@ -124,12 +122,9 @@ class MainContainer extends Component {
 const mapStateToProps = ({ sites, aqData }) => {
 
     const chartData = {};
-    // console.log('aqData.siteData is')
-    // console.log(aqData.siteData)
-    // console.log('sites.selectedSiteId is:')
     const selectedSiteData = aqData.siteData[sites.selectedSiteId];
     if (selectedSiteData) {
-        selectedSiteData.forEach((obj) => {
+        selectedSiteData.forEach(obj => {
             chartData[obj.time] = obj[aqData.pollutant]
         })
     }
@@ -159,7 +154,6 @@ const mapDispatchToProps = dispatch => {
         regionClick: (val, arg) => dispatch(regionClick(val, arg)),
         resetSelectedSiteId: () => dispatch(resetSelectedSiteId()),
         fetchSiteData: (val) => dispatch(fetchSiteData(val)),
-        fetchOverlaySiteData: (val) => dispatch(fetchSiteData(val, true)),
     };
 };
 

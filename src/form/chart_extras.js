@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_OVERLAY_SITE_MODE, REFRESH_OVERLAY } from "../store/constants";
 
-
 export default () => {
 
     const dispatch = useDispatch();
