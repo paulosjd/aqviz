@@ -7,7 +7,7 @@ import RegionsMap from '../display/regions_map'
 import FilterItems from './filter_items';
 import TimeSeriesChart from '../display/line_chart'
 import OutsideAction from '../utils/outside_action'
-import ChartButtonGroup from '../form/chart_btn_group'
+import ChartExtrasButtonGroup from '../form/chart_extras'
 
 class MainContainer extends Component {
 
@@ -21,9 +21,23 @@ class MainContainer extends Component {
                 this.props.fetchSiteData(this.props.selectedSiteId);
             }
         }
+        if (this.props.overlaySiteIds.length > 0 && this.props.overlaySiteIds !== prevProps.overlaySiteIds) {
+            this.props.overlaySiteIds.forEach(siteId => {
+                if (!this.props.overlaySiteData[siteId]) {
+                    this.props.fetchOverlaySiteData(this.props.selectedSiteId);
+                }
+            })
+        }
     }
 
-    getFilteredSites = () =>{
+    getSiteNameFromId = (siteId) => {
+        const siteInd = this.props.sites.findIndex(x => x.id === siteId);
+        if (siteInd > -1) {
+            return this.props.sites[siteInd].name
+        } return ''
+    };
+
+    getFilteredSites = () => {
         let sites = [...this.props.sites];
         const [envEmpty, regEmpty] = [this.props.selectedEnvirons.length < 1, this.props.selectedRegions.length < 1];
         if (envEmpty && regEmpty && this.props.textSearch.length < 1 && !this.props.selectedSiteId){
@@ -49,6 +63,11 @@ class MainContainer extends Component {
     };
 
     render() {
+        console.log(this.props.siteData)
+        console.log(this.getSiteNameFromId(45))
+
+
+
         const filteredSites = this.getFilteredSites();
         let [siteName, siteEnviron] = ['', ''];
         const siteInd = filteredSites.findIndex(x => x.id === this.props.selectedSiteId);
@@ -77,7 +96,7 @@ class MainContainer extends Component {
                         /> }
                     { this.props.selectedSiteId ?
                         <OutsideAction
-                            ignoreClasses={['oa_ignore', 'site-mark', 'pollutant_select']}
+                            ignoreClasses={['oa_ignore', 'site-mark', 'pollutant_select', 'chart_extras']}
                             action={() => this.props.resetSelectedSiteId()}
                         >
                             <TimeSeriesChart
@@ -86,12 +105,13 @@ class MainContainer extends Component {
                                 siteName={siteName}
                                 siteEnviron={siteEnviron}
                                 isLoading={this.props.chartDataIsLoading}
+                                getSiteNameFromId={this.getSiteNameFromId.bind(this)}
                             />
                         </OutsideAction> : null }
                     <div className='table_area'>
                         <SiteTable filteredSites={filteredSites} />
                         { this.props.selectedSiteId ?
-                            <ChartButtonGroup
+                            <ChartExtrasButtonGroup
                                 timeSpan={this.props.chartTimeSpan}
                             /> : null }
                     </div>
@@ -104,6 +124,9 @@ class MainContainer extends Component {
 const mapStateToProps = ({ sites, aqData }) => {
 
     const chartData = {};
+    console.log('aqData.siteData is')
+    console.log(aqData.siteData)
+    console.log('sites.selectedSiteId is:')
     const selectedSiteData = aqData.siteData[sites.selectedSiteId];
     if (selectedSiteData) {
         selectedSiteData.forEach((obj) => {
@@ -118,6 +141,8 @@ const mapStateToProps = ({ sites, aqData }) => {
         selectedRegions: sites.selectedRegions,
         selectedEnvirons: sites.selectedEnvirons,
         selectedSiteId: sites.selectedSiteId,
+        overlaySiteIds: sites.overlaySiteIds,
+        overlaySiteData: aqData.overlaySiteData,
         chartData: chartData,
         chartTimeSpan: aqData.chartTimeSpan,
         textSearch: sites.textSearch,
@@ -134,6 +159,7 @@ const mapDispatchToProps = dispatch => {
         regionClick: (val, arg) => dispatch(regionClick(val, arg)),
         resetSelectedSiteId: () => dispatch(resetSelectedSiteId()),
         fetchSiteData: (val) => dispatch(fetchSiteData(val)),
+        fetchOverlaySiteData: (val) => dispatch(fetchSiteData(val, true)),
     };
 };
 

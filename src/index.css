@@ -34,9 +34,11 @@ body {
 
 .btn-info {
   color: #8a9baa;
-  background-color: #cbe3ff;
+  background-color: #fafff3;
   border-color: #8a9baa;
   border-width: 1px;
+  font-size: 14px;
+  padding: 4px 6px 4px 6px;
 }
 
 .btn-info:active:focus {
@@ -104,7 +106,8 @@ path:hover {
 }
 
 .active-btn  {
-  background-color: #d2cdc3;
+  background-color: #779dad !important;
+  color: white;
 }
 
 .btn_line_btn {
@@ -119,13 +122,17 @@ path:hover {
 }
 
 .chart_btn {
-  font-size: 12px;
-  padding: 4px 10px 4px 10px;
-  margin: 1px;
-  border-color: #f5f5f3;
-  border-radius: 3px;
-  display: block;
-  width: 65px;
+   font-size: 12px;
+   padding: 4px 10px 4px 10px;
+   margin: 1px;
+   border-color: #f5f5f3;
+   border-radius: 3px;
+   display: block;
+   width: 65px;
+ }
+
+.chart_extras {
+  width: fit-content !important;
 }
 
 .chart_btn:focus {
@@ -136,7 +143,13 @@ path:hover {
   /*outline: solid;*/
   border-radius: 3px;
   border-color: #6f98bb;
+}
 
+.chart_btn.activeExtraBtn {
+  border-radius: 3px;
+  border-color: #6f98bb;
+  background-color: #586799;
+  color: white;
 }
 
 .chart_btn_group {
