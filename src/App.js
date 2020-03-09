@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Navbar } from 'reactstrap';
 import MainContainer from './containers/main';
 import TopNav from './display/top_nav'
 

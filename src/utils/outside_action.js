@@ -11,7 +11,8 @@ const useOutsideAction = (ref, action, ignoreClasses) => {
 
         if (ignoreClasses.includes(targetClsName) ||
             ignoreClasses.includes(targetClsName.split(' ')[0]) ||
-            ignoreClasses.includes(targetClsName.split(' ')[1])
+            ignoreClasses.includes(targetClsName.split(' ')[1]) ||
+            ['text', 'path'].includes(event.target.nodeName)
         ) {
             return
         }

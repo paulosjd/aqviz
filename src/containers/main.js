@@ -23,7 +23,9 @@ class MainContainer extends Component {
         }
         if (this.props.overlaySiteIds.length > 0 && this.props.overlaySiteIds !== prevProps.overlaySiteIds) {
             this.props.overlaySiteIds.forEach(siteId => {
-                if (!this.props.overlaySiteData[siteId]) {
+                console.log(siteId)
+                if (!this.props.overlaySiteData[siteId] && !this.props.siteData.hasOwnProperty(siteId)) {
+                    console.log('not overlaySD for siteID and not props sitedata props key ' + siteId)
                     this.props.fetchOverlaySiteData(this.props.selectedSiteId);
                 }
             })
@@ -63,11 +65,6 @@ class MainContainer extends Component {
     };
 
     render() {
-        console.log(this.props.siteData)
-        console.log(this.getSiteNameFromId(45))
-
-
-
         const filteredSites = this.getFilteredSites();
         let [siteName, siteEnviron] = ['', ''];
         const siteInd = filteredSites.findIndex(x => x.id === this.props.selectedSiteId);
@@ -96,7 +93,10 @@ class MainContainer extends Component {
                         /> }
                     { this.props.selectedSiteId ?
                         <OutsideAction
-                            ignoreClasses={['oa_ignore', 'site-mark', 'pollutant_select', 'chart_extras']}
+                            ignoreClasses={
+                                ['oa_ignore', 'site-mark', 'pollutant_select', 'chart_extras', 'refresh_overlay',
+                                'refresh_symbol', 'btn_line_btn']
+                            }
                             action={() => this.props.resetSelectedSiteId()}
                         >
                             <TimeSeriesChart
@@ -124,9 +124,9 @@ class MainContainer extends Component {
 const mapStateToProps = ({ sites, aqData }) => {
 
     const chartData = {};
-    console.log('aqData.siteData is')
-    console.log(aqData.siteData)
-    console.log('sites.selectedSiteId is:')
+    // console.log('aqData.siteData is')
+    // console.log(aqData.siteData)
+    // console.log('sites.selectedSiteId is:')
     const selectedSiteData = aqData.siteData[sites.selectedSiteId];
     if (selectedSiteData) {
         selectedSiteData.forEach((obj) => {

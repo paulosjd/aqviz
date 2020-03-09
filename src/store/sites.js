@@ -1,6 +1,6 @@
 import {
     FETCH_SITES_BEGIN, FETCH_SITES_SUCCESS, FETCH_SITES_FAILURE, ENVIRON_CLICK, REGION_CLICK, TEXT_SEARCH_CHANGE,
-    SITE_HIGHLIGHT, REFRESH_SELECTION, SITE_SELECT
+    SITE_HIGHLIGHT, REFRESH_SELECTION, SITE_SELECT, SET_OVERLAY_SITE_MODE, REFRESH_OVERLAY,
 } from './constants'
 
 const initialState = {
@@ -9,15 +9,18 @@ const initialState = {
     selectedRegions: [],
     environs: [],
     selectedEnvirons: [],
+    overlaySiteIds: [],
     selectedSiteId: '',
     hoverSiteCode: '',
     textSearch: '',
+    overlaySiteMode: false,
     loading: false,
     error: null,
     time: ''
 };
 
 export default function sitesReducer(state = initialState, action) {
+    // state = {...state, overlaySiteMode: false if not selectedSiteId}??
     switch(action.type) {
         case FETCH_SITES_BEGIN:
             return { ...state, loading: true, error: null };
@@ -56,7 +59,21 @@ export default function sitesReducer(state = initialState, action) {
         case SITE_HIGHLIGHT:
             return { ...state, hoverSiteCode: action.value };
         case SITE_SELECT:
+            if (action.value === '') {
+                return { ...state, selectedSiteId: '', overlaySiteMode: false, overlaySiteIds: [] };
+            }
+            if (state.overlaySiteMode && state.overlaySiteIds.length < 4) {
+                const overlaySiteIds = [ ...state.overlaySiteIds ];
+                if (!overlaySiteIds.includes(action.value)) {
+                    overlaySiteIds.push(action.value);
+                }
+                return { ...state, overlaySiteIds };
+            }
             return { ...state, selectedSiteId: action.value };
+        case SET_OVERLAY_SITE_MODE:
+            return { ...state, overlaySiteMode: action.value };
+        case REFRESH_OVERLAY:
+            return { ...state, overlaySiteIds: [] };
         case TEXT_SEARCH_CHANGE:
             return { ...state, textSearch: action.value };
         default:

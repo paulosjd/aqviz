@@ -245,3 +245,8 @@ text.site-label {
   float: right;
   margin-right: 182px;
 }
+
+.refresh_overlay {
+  font-size: medium;
+  cursor: pointer;
+}

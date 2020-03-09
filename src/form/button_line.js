@@ -25,7 +25,7 @@ export default ({ labels, category }) => {
                             {val}
                         </button>)
                 })}
-                {category ==='environ' ?
+                {category ==='environ' && sites.selectedEnvirons.length > 0 ?
                     <span role="img" aria-label="refresh" className='refresh_symbol'
                           onClick={() => dispatch({ type: REFRESH_SELECTION })}
                     >&#x1f504;</span>
