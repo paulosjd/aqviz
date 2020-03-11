@@ -20,7 +20,6 @@ const initialState = {
 };
 
 export default function sitesReducer(state = initialState, action) {
-    // state = {...state, overlaySiteMode: false if not selectedSiteId}??
     switch(action.type) {
         case FETCH_SITES_BEGIN:
             return { ...state, loading: true, error: null };
@@ -64,7 +63,7 @@ export default function sitesReducer(state = initialState, action) {
             }
             if (state.overlaySiteMode && state.overlaySiteIds.length < 4) {
                 const overlaySiteIds = [ ...state.overlaySiteIds ];
-                if (!overlaySiteIds.includes(action.value)) {
+                if (!overlaySiteIds.includes(action.value) && action.value !== state.selectedSiteId) {
                     overlaySiteIds.push(action.value);
                 }
                 return { ...state, overlaySiteIds };

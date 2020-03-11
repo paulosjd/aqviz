@@ -1,12 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_OVERLAY_SITE_MODE, REFRESH_OVERLAY } from "../store/constants";
+import { Spinner } from "reactstrap";
 
-export default () => {
+export default ({ isLoading }) => {
 
     const dispatch = useDispatch();
     const content = useSelector(state => state);
     const overlaySiteMode = content.sites.overlaySiteMode;
+
+    if (isLoading) {
+        return <Spinner size='small' className='left24' color="secondary"/>
+    }
 
     return (
         <div className='chart_btn_group' >

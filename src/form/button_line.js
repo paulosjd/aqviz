@@ -8,29 +8,26 @@ export default ({ labels, category }) => {
     const content = useSelector(state => state);
     const sites = content.sites;
 
-    const handleClick = (val) => {
-        dispatch({ type: category === 'region' ? REGION_CLICK : ENVIRON_CLICK, value: val })
-    };
-
     return (
         <div>
             <div className={`${category}_buttons btn_line`} >
-                {labels.map(val => {
+                {labels.map(val =>{
                     const container = sites[category ==='region' ? 'selectedRegions' : 'selectedEnvirons'];
                     const activeCls = container.includes(val) ? 'active-btn' : '';
+                    const actionType = category === 'region' ? REGION_CLICK : ENVIRON_CLICK;
                     return (
                         <button
                             key={val} className={`${category}_button btn_line_btn ${activeCls}`}
                             value={val}
-                            onClick={val => handleClick(val)}
-                        >{val}
-                        </button> )
+                            onClick={() => dispatch({ type: actionType, value: val })}
+                        >
+                            {val}
+                        </button>)
                 })}
-                {category ==='environ' && sites.selectedEnvirons.length > 0 ?
+                {category ==='environ' && sites['selectedEnvirons'].length > 0 &&
                     <span role="img" aria-label="refresh" className='refresh_symbol'
                           onClick={() => dispatch({ type: REFRESH_SELECTION })}
-                    >&#x1f504;</span>
-                    : null}
+                    >&#x1f504;</span>}
             </div>
         </div>
     )

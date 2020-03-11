@@ -27,14 +27,14 @@ body {
 }
 
 .nav-item {
-  margin-top: 6px;
+  margin-top: 3px;
   margin-left: 12px;
   font-size: 14px;
 }
 
 .btn-info {
-  color: #8a9baa;
-  background-color: #fafff3;
+  color: #5a656f;
+  background-color: #eff4e9;
   border-color: #8a9baa;
   border-width: 1px;
   font-size: 14px;
@@ -53,6 +53,10 @@ body {
   margin-left: 30px;
   font-weight: lighter;
 
+}
+
+.left24 {
+  margin-left: 24px;
 }
 
 .mgn-tp-12 {
@@ -148,8 +152,7 @@ path:hover {
 .chart_btn.activeExtraBtn {
   border-radius: 3px;
   border-color: #6f98bb;
-  background-color: #586799;
-  color: white;
+  background-color: #d4d7d7;
 }
 
 .chart_btn_group {
