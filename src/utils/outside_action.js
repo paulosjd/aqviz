@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 const useOutsideAction = (ref, action, ignoreClasses) => {
 
     const handleClickOutside = (event) => {
-
-        console.dir(event)
-        
         /** Run the action if clicked on outside of element */
         ignoreClasses = ignoreClasses || [];
         const targetClsName = typeof event.target.className === 'string' ?

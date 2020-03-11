@@ -249,6 +249,11 @@ text.site-label {
   margin-right: 182px;
 }
 
+.extra_loading {
+  margin-left: 26px;
+  margin-top: 28px;
+}
+
 .refresh_overlay {
   font-size: medium;
   cursor: pointer;

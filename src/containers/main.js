@@ -109,7 +109,10 @@ class MainContainer extends Component {
                     <div className='table_area'>
                         <SiteTable filteredSites={filteredSites} />
                         { this.props.selectedSiteId &&
-                        <ChartExtrasButtonGroup isLoading={this.props.chartDataIsLoading}/> }
+                        <ChartExtrasButtonGroup
+                            isLoading={this.props.chartDataIsLoading}
+                            chartDataLen={Object.keys(this.props.chartData).length}
+                        /> }
                     </div>
                 </Col>
             </Row>

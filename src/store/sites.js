@@ -35,7 +35,7 @@ export default function sitesReducer(state = initialState, action) {
                 time: action.payload.siteData.data.time
             };
         case FETCH_SITES_FAILURE:
-            console.log(action.payload.error);
+            // console.log(action.payload.error);
             return { ...state, loading: false, error: action.payload.error };
         case ENVIRON_CLICK:
             let environList = [...state.selectedEnvirons];
@@ -68,7 +68,7 @@ export default function sitesReducer(state = initialState, action) {
                 }
                 return { ...state, overlaySiteIds };
             }
-            return { ...state, selectedSiteId: action.value };
+            return { ...state, selectedSiteId: action.value, overlaySiteIds: [] };
         case SET_OVERLAY_SITE_MODE:
             return { ...state, overlaySiteMode: action.value };
         case REFRESH_OVERLAY:
